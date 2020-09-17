@@ -1,3 +1,4 @@
+// @ts-nocheck
 // Generated from grammars/UQMTextLocalization.g4 by ANTLR 4.7.3-SNAPSHOT
 
 
@@ -37,7 +38,7 @@ export class UQMTextLocalizationLexer extends Lexer {
 	];
 
 	public static readonly ruleNames: string[] = [
-		"LOWERCASE", "UPPERCASE", "NUMBER", "HEADER_START", "HEADER_END", "AUDIOFILE", 
+		"LOWERCASE", "UPPERCASE", "NUMBER", "HEADER_START", "HEADER_END", "AUDIOFILE",
 		"WHITESPACE", "NEWLINE", "LOWERCASE_WORD", "UPPERCASE_WORD", "WORD", "PUNCTUATION",
 	];
 
@@ -45,7 +46,7 @@ export class UQMTextLocalizationLexer extends Lexer {
 		undefined, "'#('", "')'",
 	];
 	private static readonly _SYMBOLIC_NAMES: Array<string | undefined> = [
-		undefined, "HEADER_START", "HEADER_END", "AUDIOFILE", "WHITESPACE", "NEWLINE", 
+		undefined, "HEADER_START", "HEADER_END", "AUDIOFILE", "WHITESPACE", "NEWLINE",
 		"LOWERCASE_WORD", "UPPERCASE_WORD", "WORD", "PUNCTUATION",
 	];
 	public static readonly VOCABULARY: Vocabulary = new VocabularyImpl(UQMTextLocalizationLexer._LITERAL_NAMES, UQMTextLocalizationLexer._SYMBOLIC_NAMES, []);
@@ -90,7 +91,7 @@ export class UQMTextLocalizationLexer extends Lexer {
 		"\x03\f\x06\fQ\n\f\r\f\x0E\fR\x03\r\x03\r\x02\x02\x02\x0E\x03\x02\x02\x05" +
 		"\x02\x02\x07\x02\x02\t\x02\x03\v\x02\x04\r\x02\x05\x0F\x02\x06\x11\x02" +
 		"\x07\x13\x02\b\x15\x02\t\x17\x02\n\x19\x02\v\x03\x02\b\x03\x02c|\x03\x02" +
-		"C\\\x03\x022;\x04\x02//aa\x04\x02\v\v\"\"\b\x02#$&,.0<=ABab\x02c\x02\t" +
+		"C\\\x03\x022;\x04\x02//aa\x04\x02\v\v\"\"\b\x02#$&,.0<>@Bab\x02c\x02\t" +
 		"\x03\x02\x02\x02\x02\v\x03\x02\x02\x02\x02\r\x03\x02\x02\x02\x02\x0F\x03" +
 		"\x02\x02\x02\x02\x11\x03\x02\x02\x02\x02\x13\x03\x02\x02\x02\x02\x15\x03" +
 		"\x02\x02\x02\x02\x17\x03\x02\x02\x02\x02\x19\x03\x02\x02\x02\x03\x1B\x03" +

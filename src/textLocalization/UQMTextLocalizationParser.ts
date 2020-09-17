@@ -1,3 +1,4 @@
+// @ts-nocheck
 // Generated from grammars/UQMTextLocalization.g4 by ANTLR 4.7.3-SNAPSHOT
 
 
@@ -47,7 +48,7 @@ export class UQMTextLocalizationParser extends Parser {
 	public static readonly RULE_localization = 7;
 	// tslint:disable:no-trailing-whitespace
 	public static readonly ruleNames: string[] = [
-		"localizations", "alien_header", "zelnick_header", "text", "line", "alien_localization", 
+		"localizations", "alien_header", "zelnick_header", "text", "line", "alien_localization",
 		"zelnick_localization", "localization",
 	];
 
@@ -55,7 +56,7 @@ export class UQMTextLocalizationParser extends Parser {
 		undefined, "'#('", "')'",
 	];
 	private static readonly _SYMBOLIC_NAMES: Array<string | undefined> = [
-		undefined, "HEADER_START", "HEADER_END", "AUDIOFILE", "WHITESPACE", "NEWLINE", 
+		undefined, "HEADER_START", "HEADER_END", "AUDIOFILE", "WHITESPACE", "NEWLINE",
 		"LOWERCASE_WORD", "UPPERCASE_WORD", "WORD", "PUNCTUATION",
 	];
 	public static readonly VOCABULARY: Vocabulary = new VocabularyImpl(UQMTextLocalizationParser._LITERAL_NAMES, UQMTextLocalizationParser._SYMBOLIC_NAMES, []);
@@ -88,22 +89,22 @@ export class UQMTextLocalizationParser extends Parser {
 		try {
 			this.enterOuterAlt(_localctx, 1);
 			{
-			this.state = 17;
-			this._errHandler.sync(this);
-			_la = this._input.LA(1);
-			do {
-				{
-				{
-				this.state = 16;
-				this.localization();
-				}
-				}
-				this.state = 19;
+				this.state = 17;
 				this._errHandler.sync(this);
 				_la = this._input.LA(1);
-			} while (_la === UQMTextLocalizationParser.HEADER_START);
-			this.state = 21;
-			this.match(UQMTextLocalizationParser.EOF);
+				do {
+					{
+						{
+							this.state = 16;
+							this.localization();
+						}
+					}
+					this.state = 19;
+					this._errHandler.sync(this);
+					_la = this._input.LA(1);
+				} while (_la === UQMTextLocalizationParser.HEADER_START);
+				this.state = 21;
+				this.match(UQMTextLocalizationParser.EOF);
 			}
 		}
 		catch (re) {
@@ -128,26 +129,26 @@ export class UQMTextLocalizationParser extends Parser {
 		try {
 			this.enterOuterAlt(_localctx, 1);
 			{
-			this.state = 23;
-			this.match(UQMTextLocalizationParser.HEADER_START);
-			this.state = 24;
-			this.match(UQMTextLocalizationParser.UPPERCASE_WORD);
-			this.state = 25;
-			this.match(UQMTextLocalizationParser.HEADER_END);
-			this.state = 28;
-			this._errHandler.sync(this);
-			_la = this._input.LA(1);
-			if (_la === UQMTextLocalizationParser.WHITESPACE) {
-				{
-				this.state = 26;
-				this.match(UQMTextLocalizationParser.WHITESPACE);
-				this.state = 27;
-				this.match(UQMTextLocalizationParser.AUDIOFILE);
+				this.state = 23;
+				this.match(UQMTextLocalizationParser.HEADER_START);
+				this.state = 24;
+				_localctx._identifier = this.match(UQMTextLocalizationParser.UPPERCASE_WORD);
+				this.state = 25;
+				this.match(UQMTextLocalizationParser.HEADER_END);
+				this.state = 28;
+				this._errHandler.sync(this);
+				_la = this._input.LA(1);
+				if (_la === UQMTextLocalizationParser.WHITESPACE) {
+					{
+						this.state = 26;
+						this.match(UQMTextLocalizationParser.WHITESPACE);
+						this.state = 27;
+						_localctx._audiofile = this.match(UQMTextLocalizationParser.AUDIOFILE);
+					}
 				}
-			}
 
-			this.state = 30;
-			this.match(UQMTextLocalizationParser.NEWLINE);
+				this.state = 30;
+				this.match(UQMTextLocalizationParser.NEWLINE);
 			}
 		}
 		catch (re) {
@@ -172,26 +173,24 @@ export class UQMTextLocalizationParser extends Parser {
 		try {
 			this.enterOuterAlt(_localctx, 1);
 			{
-			this.state = 32;
-			this.match(UQMTextLocalizationParser.HEADER_START);
-			this.state = 33;
-			this.match(UQMTextLocalizationParser.LOWERCASE_WORD);
-			this.state = 34;
-			this.match(UQMTextLocalizationParser.HEADER_END);
-			this.state = 37;
-			this._errHandler.sync(this);
-			_la = this._input.LA(1);
-			if (_la === UQMTextLocalizationParser.WHITESPACE) {
-				{
-				this.state = 35;
-				this.match(UQMTextLocalizationParser.WHITESPACE);
+				this.state = 32;
+				this.match(UQMTextLocalizationParser.HEADER_START);
+				this.state = 33;
+				_localctx._identifier = this.match(UQMTextLocalizationParser.LOWERCASE_WORD);
+				this.state = 34;
+				this.match(UQMTextLocalizationParser.HEADER_END);
 				this.state = 36;
-				this.match(UQMTextLocalizationParser.AUDIOFILE);
+				this._errHandler.sync(this);
+				_la = this._input.LA(1);
+				if (_la === UQMTextLocalizationParser.WHITESPACE) {
+					{
+						this.state = 35;
+						this.match(UQMTextLocalizationParser.WHITESPACE);
+					}
 				}
-			}
 
-			this.state = 39;
-			this.match(UQMTextLocalizationParser.NEWLINE);
+				this.state = 38;
+				this.match(UQMTextLocalizationParser.NEWLINE);
 			}
 		}
 		catch (re) {
@@ -216,20 +215,20 @@ export class UQMTextLocalizationParser extends Parser {
 		try {
 			this.enterOuterAlt(_localctx, 1);
 			{
-			this.state = 42;
-			this._errHandler.sync(this);
-			_la = this._input.LA(1);
-			do {
-				{
-				{
 				this.state = 41;
-				this.line();
-				}
-				}
-				this.state = 44;
 				this._errHandler.sync(this);
 				_la = this._input.LA(1);
-			} while ((((_la) & ~0x1F) === 0 && ((1 << _la) & ((1 << UQMTextLocalizationParser.WHITESPACE) | (1 << UQMTextLocalizationParser.LOWERCASE_WORD) | (1 << UQMTextLocalizationParser.UPPERCASE_WORD) | (1 << UQMTextLocalizationParser.WORD) | (1 << UQMTextLocalizationParser.PUNCTUATION))) !== 0));
+				do {
+					{
+						{
+							this.state = 40;
+							this.line();
+						}
+					}
+					this.state = 43;
+					this._errHandler.sync(this);
+					_la = this._input.LA(1);
+				} while ((((_la) & ~0x1F) === 0 && ((1 << _la) & ((1 << UQMTextLocalizationParser.WHITESPACE) | (1 << UQMTextLocalizationParser.LOWERCASE_WORD) | (1 << UQMTextLocalizationParser.UPPERCASE_WORD) | (1 << UQMTextLocalizationParser.WORD) | (1 << UQMTextLocalizationParser.PUNCTUATION))) !== 0));
 			}
 		}
 		catch (re) {
@@ -254,32 +253,32 @@ export class UQMTextLocalizationParser extends Parser {
 		try {
 			this.enterOuterAlt(_localctx, 1);
 			{
-			this.state = 47;
-			this._errHandler.sync(this);
-			_la = this._input.LA(1);
-			do {
-				{
-				{
 				this.state = 46;
-				_la = this._input.LA(1);
-				if (!((((_la) & ~0x1F) === 0 && ((1 << _la) & ((1 << UQMTextLocalizationParser.WHITESPACE) | (1 << UQMTextLocalizationParser.LOWERCASE_WORD) | (1 << UQMTextLocalizationParser.UPPERCASE_WORD) | (1 << UQMTextLocalizationParser.WORD) | (1 << UQMTextLocalizationParser.PUNCTUATION))) !== 0))) {
-				this._errHandler.recoverInline(this);
-				} else {
-					if (this._input.LA(1) === Token.EOF) {
-						this.matchedEOF = true;
-					}
-
-					this._errHandler.reportMatch(this);
-					this.consume();
-				}
-				}
-				}
-				this.state = 49;
 				this._errHandler.sync(this);
 				_la = this._input.LA(1);
-			} while ((((_la) & ~0x1F) === 0 && ((1 << _la) & ((1 << UQMTextLocalizationParser.WHITESPACE) | (1 << UQMTextLocalizationParser.LOWERCASE_WORD) | (1 << UQMTextLocalizationParser.UPPERCASE_WORD) | (1 << UQMTextLocalizationParser.WORD) | (1 << UQMTextLocalizationParser.PUNCTUATION))) !== 0));
-			this.state = 51;
-			this.match(UQMTextLocalizationParser.NEWLINE);
+				do {
+					{
+						{
+							this.state = 45;
+							_la = this._input.LA(1);
+							if (!((((_la) & ~0x1F) === 0 && ((1 << _la) & ((1 << UQMTextLocalizationParser.WHITESPACE) | (1 << UQMTextLocalizationParser.LOWERCASE_WORD) | (1 << UQMTextLocalizationParser.UPPERCASE_WORD) | (1 << UQMTextLocalizationParser.WORD) | (1 << UQMTextLocalizationParser.PUNCTUATION))) !== 0))) {
+								this._errHandler.recoverInline(this);
+							} else {
+								if (this._input.LA(1) === Token.EOF) {
+									this.matchedEOF = true;
+								}
+
+								this._errHandler.reportMatch(this);
+								this.consume();
+							}
+						}
+					}
+					this.state = 48;
+					this._errHandler.sync(this);
+					_la = this._input.LA(1);
+				} while ((((_la) & ~0x1F) === 0 && ((1 << _la) & ((1 << UQMTextLocalizationParser.WHITESPACE) | (1 << UQMTextLocalizationParser.LOWERCASE_WORD) | (1 << UQMTextLocalizationParser.UPPERCASE_WORD) | (1 << UQMTextLocalizationParser.WORD) | (1 << UQMTextLocalizationParser.PUNCTUATION))) !== 0));
+				this.state = 50;
+				this.match(UQMTextLocalizationParser.NEWLINE);
 			}
 		}
 		catch (re) {
@@ -303,10 +302,10 @@ export class UQMTextLocalizationParser extends Parser {
 		try {
 			this.enterOuterAlt(_localctx, 1);
 			{
-			this.state = 53;
-			this.alien_header();
-			this.state = 54;
-			this.text();
+				this.state = 52;
+				this.alien_header();
+				this.state = 53;
+				this.text();
 			}
 		}
 		catch (re) {
@@ -330,10 +329,10 @@ export class UQMTextLocalizationParser extends Parser {
 		try {
 			this.enterOuterAlt(_localctx, 1);
 			{
-			this.state = 56;
-			this.zelnick_header();
-			this.state = 57;
-			this.text();
+				this.state = 55;
+				this.zelnick_header();
+				this.state = 56;
+				this.text();
 			}
 		}
 		catch (re) {
@@ -357,23 +356,23 @@ export class UQMTextLocalizationParser extends Parser {
 		try {
 			this.enterOuterAlt(_localctx, 1);
 			{
-			this.state = 61;
-			this._errHandler.sync(this);
-			switch ( this.interpreter.adaptivePredict(this._input, 5, this._ctx) ) {
-			case 1:
-				{
-				this.state = 59;
-				this.alien_localization();
-				}
-				break;
-
-			case 2:
-				{
 				this.state = 60;
-				this.zelnick_localization();
+				this._errHandler.sync(this);
+				switch (this.interpreter.adaptivePredict(this._input, 5, this._ctx)) {
+					case 1:
+						{
+							this.state = 58;
+							this.alien_localization();
+						}
+						break;
+
+					case 2:
+						{
+							this.state = 59;
+							this.zelnick_localization();
+						}
+						break;
 				}
-				break;
-			}
 			}
 		}
 		catch (re) {
@@ -392,33 +391,33 @@ export class UQMTextLocalizationParser extends Parser {
 	}
 
 	public static readonly _serializedATN: string =
-		"\x03\uC91D\uCABA\u058D\uAFBA\u4F53\u0607\uEA8B\uC241\x03\vB\x04\x02\t" +
+		"\x03\uC91D\uCABA\u058D\uAFBA\u4F53\u0607\uEA8B\uC241\x03\vA\x04\x02\t" +
 		"\x02\x04\x03\t\x03\x04\x04\t\x04\x04\x05\t\x05\x04\x06\t\x06\x04\x07\t" +
 		"\x07\x04\b\t\b\x04\t\t\t\x03\x02\x06\x02\x14\n\x02\r\x02\x0E\x02\x15\x03" +
 		"\x02\x03\x02\x03\x03\x03\x03\x03\x03\x03\x03\x03\x03\x05\x03\x1F\n\x03" +
-		"\x03\x03\x03\x03\x03\x04\x03\x04\x03\x04\x03\x04\x03\x04\x05\x04(\n\x04" +
-		"\x03\x04\x03\x04\x03\x05\x06\x05-\n\x05\r\x05\x0E\x05.\x03\x06\x06\x06" +
-		"2\n\x06\r\x06\x0E\x063\x03\x06\x03\x06\x03\x07\x03\x07\x03\x07\x03\b\x03" +
-		"\b\x03\b\x03\t\x03\t\x05\t@\n\t\x03\t\x02\x02\x02\n\x02\x02\x04\x02\x06" +
-		"\x02\b\x02\n\x02\f\x02\x0E\x02\x10\x02\x02\x03\x04\x02\x06\x06\b\v\x02" +
-		"?\x02\x13\x03\x02\x02\x02\x04\x19\x03\x02\x02\x02\x06\"\x03\x02\x02\x02" +
-		"\b,\x03\x02\x02\x02\n1\x03\x02\x02\x02\f7\x03\x02\x02\x02\x0E:\x03\x02" +
-		"\x02\x02\x10?\x03\x02\x02\x02\x12\x14\x05\x10\t\x02\x13\x12\x03\x02\x02" +
-		"\x02\x14\x15\x03\x02\x02\x02\x15\x13\x03\x02\x02\x02\x15\x16\x03\x02\x02" +
-		"\x02\x16\x17\x03\x02\x02\x02\x17\x18\x07\x02\x02\x03\x18\x03\x03\x02\x02" +
-		"\x02\x19\x1A\x07\x03\x02\x02\x1A\x1B\x07\t\x02\x02\x1B\x1E\x07\x04\x02" +
-		"\x02\x1C\x1D\x07\x06\x02\x02\x1D\x1F\x07\x05\x02\x02\x1E\x1C\x03\x02\x02" +
-		"\x02\x1E\x1F\x03\x02\x02\x02\x1F \x03\x02\x02\x02 !\x07\x07\x02\x02!\x05" +
-		"\x03\x02\x02\x02\"#\x07\x03\x02\x02#$\x07\b\x02\x02$\'\x07\x04\x02\x02" +
-		"%&\x07\x06\x02\x02&(\x07\x05\x02\x02\'%\x03\x02\x02\x02\'(\x03\x02\x02" +
-		"\x02()\x03\x02\x02\x02)*\x07\x07\x02\x02*\x07\x03\x02\x02\x02+-\x05\n" +
-		"\x06\x02,+\x03\x02\x02\x02-.\x03\x02\x02\x02.,\x03\x02\x02\x02./\x03\x02" +
-		"\x02\x02/\t\x03\x02\x02\x0202\t\x02\x02\x0210\x03\x02\x02\x0223\x03\x02" +
-		"\x02\x0231\x03\x02\x02\x0234\x03\x02\x02\x0245\x03\x02\x02\x0256\x07\x07" +
-		"\x02\x026\v\x03\x02\x02\x0278\x05\x04\x03\x0289\x05\b\x05\x029\r\x03\x02" +
-		"\x02\x02:;\x05\x06\x04\x02;<\x05\b\x05\x02<\x0F\x03\x02\x02\x02=@\x05" +
-		"\f\x07\x02>@\x05\x0E\b\x02?=\x03\x02\x02\x02?>\x03\x02\x02\x02@\x11\x03" +
-		"\x02\x02\x02\b\x15\x1E\'.3?";
+		"\x03\x03\x03\x03\x03\x04\x03\x04\x03\x04\x03\x04\x05\x04\'\n\x04\x03\x04" +
+		"\x03\x04\x03\x05\x06\x05,\n\x05\r\x05\x0E\x05-\x03\x06\x06\x061\n\x06" +
+		"\r\x06\x0E\x062\x03\x06\x03\x06\x03\x07\x03\x07\x03\x07\x03\b\x03\b\x03" +
+		"\b\x03\t\x03\t\x05\t?\n\t\x03\t\x02\x02\x02\n\x02\x02\x04\x02\x06\x02" +
+		"\b\x02\n\x02\f\x02\x0E\x02\x10\x02\x02\x03\x04\x02\x06\x06\b\v\x02>\x02" +
+		"\x13\x03\x02\x02\x02\x04\x19\x03\x02\x02\x02\x06\"\x03\x02\x02\x02\b+" +
+		"\x03\x02\x02\x02\n0\x03\x02\x02\x02\f6\x03\x02\x02\x02\x0E9\x03\x02\x02" +
+		"\x02\x10>\x03\x02\x02\x02\x12\x14\x05\x10\t\x02\x13\x12\x03\x02\x02\x02" +
+		"\x14\x15\x03\x02\x02\x02\x15\x13\x03\x02\x02\x02\x15\x16\x03\x02\x02\x02" +
+		"\x16\x17\x03\x02\x02\x02\x17\x18\x07\x02\x02\x03\x18\x03\x03\x02\x02\x02" +
+		"\x19\x1A\x07\x03\x02\x02\x1A\x1B\x07\t\x02\x02\x1B\x1E\x07\x04\x02\x02" +
+		"\x1C\x1D\x07\x06\x02\x02\x1D\x1F\x07\x05\x02\x02\x1E\x1C\x03\x02\x02\x02" +
+		"\x1E\x1F\x03\x02\x02\x02\x1F \x03\x02\x02\x02 !\x07\x07\x02\x02!\x05\x03" +
+		"\x02\x02\x02\"#\x07\x03\x02\x02#$\x07\b\x02\x02$&\x07\x04\x02\x02%\'\x07" +
+		"\x06\x02\x02&%\x03\x02\x02\x02&\'\x03\x02\x02\x02\'(\x03\x02\x02\x02(" +
+		")\x07\x07\x02\x02)\x07\x03\x02\x02\x02*,\x05\n\x06\x02+*\x03\x02\x02\x02" +
+		",-\x03\x02\x02\x02-+\x03\x02\x02\x02-.\x03\x02\x02\x02.\t\x03\x02\x02" +
+		"\x02/1\t\x02\x02\x020/\x03\x02\x02\x0212\x03\x02\x02\x0220\x03\x02\x02" +
+		"\x0223\x03\x02\x02\x0234\x03\x02\x02\x0245\x07\x07\x02\x025\v\x03\x02" +
+		"\x02\x0267\x05\x04\x03\x0278\x05\b\x05\x028\r\x03\x02\x02\x029:\x05\x06" +
+		"\x04\x02:;\x05\b\x05\x02;\x0F\x03\x02\x02\x02<?\x05\f\x07\x02=?\x05\x0E" +
+		"\b\x02><\x03\x02\x02\x02>=\x03\x02\x02\x02?\x11\x03\x02\x02\x02\b\x15" +
+		"\x1E&-2>";
 	public static __ATN: ATN;
 	public static get _ATN(): ATN {
 		if (!UQMTextLocalizationParser.__ATN) {
@@ -470,10 +469,12 @@ export class LocalizationsContext extends ParserRuleContext {
 
 
 export class Alien_headerContext extends ParserRuleContext {
+	public _identifier: Token;
+	public _audiofile: Token;
 	public HEADER_START(): TerminalNode { return this.getToken(UQMTextLocalizationParser.HEADER_START, 0); }
-	public UPPERCASE_WORD(): TerminalNode { return this.getToken(UQMTextLocalizationParser.UPPERCASE_WORD, 0); }
 	public HEADER_END(): TerminalNode { return this.getToken(UQMTextLocalizationParser.HEADER_END, 0); }
 	public NEWLINE(): TerminalNode { return this.getToken(UQMTextLocalizationParser.NEWLINE, 0); }
+	public UPPERCASE_WORD(): TerminalNode { return this.getToken(UQMTextLocalizationParser.UPPERCASE_WORD, 0); }
 	public WHITESPACE(): TerminalNode | undefined { return this.tryGetToken(UQMTextLocalizationParser.WHITESPACE, 0); }
 	public AUDIOFILE(): TerminalNode | undefined { return this.tryGetToken(UQMTextLocalizationParser.AUDIOFILE, 0); }
 	constructor(parent: ParserRuleContext | undefined, invokingState: number) {
@@ -505,12 +506,12 @@ export class Alien_headerContext extends ParserRuleContext {
 
 
 export class Zelnick_headerContext extends ParserRuleContext {
+	public _identifier: Token;
 	public HEADER_START(): TerminalNode { return this.getToken(UQMTextLocalizationParser.HEADER_START, 0); }
-	public LOWERCASE_WORD(): TerminalNode { return this.getToken(UQMTextLocalizationParser.LOWERCASE_WORD, 0); }
 	public HEADER_END(): TerminalNode { return this.getToken(UQMTextLocalizationParser.HEADER_END, 0); }
 	public NEWLINE(): TerminalNode { return this.getToken(UQMTextLocalizationParser.NEWLINE, 0); }
+	public LOWERCASE_WORD(): TerminalNode { return this.getToken(UQMTextLocalizationParser.LOWERCASE_WORD, 0); }
 	public WHITESPACE(): TerminalNode | undefined { return this.tryGetToken(UQMTextLocalizationParser.WHITESPACE, 0); }
-	public AUDIOFILE(): TerminalNode | undefined { return this.tryGetToken(UQMTextLocalizationParser.AUDIOFILE, 0); }
 	constructor(parent: ParserRuleContext | undefined, invokingState: number) {
 		super(parent, invokingState);
 	}
