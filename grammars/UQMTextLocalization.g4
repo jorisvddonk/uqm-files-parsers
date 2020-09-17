@@ -8,10 +8,12 @@ grammar UQMTextLocalization;
 localizations: localization+ EOF;
 
 alien_header:
-	HEADER_START UPPERCASE_WORD HEADER_END (WHITESPACE AUDIOFILE)? NEWLINE;
+	HEADER_START identifier = UPPERCASE_WORD HEADER_END (
+		WHITESPACE audiofile = AUDIOFILE
+	)? NEWLINE;
 
 zelnick_header:
-	HEADER_START LOWERCASE_WORD HEADER_END (WHITESPACE AUDIOFILE)? NEWLINE;
+	HEADER_START identifier = LOWERCASE_WORD HEADER_END WHITESPACE? NEWLINE;
 
 text: line+;
 
@@ -65,4 +67,6 @@ PUNCTUATION: (
 		| '*'
 		| '-'
 		| '_'
+		| '<'
+		| '>'
 	);
