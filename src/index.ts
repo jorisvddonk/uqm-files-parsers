@@ -1,12 +1,6 @@
-/**
- * Parse an uqm text localization file, and return the relevant string identifiers with their localized texts.
- * Localization files are used in various places in UQM, most notably in conversations with aliens.
- * Localizations _may_ have audio files associated with them.
- * @param str file contents to parse
- */
-export function parseTextLocalizationFile(str: string) {
-  // todo
-}
+import { parseTextLocalizationFile } from "./parseTextLocalization";
+
+export { parseTextLocalizationFile }
 
 /**
  * Parse an uqm speech timing file, and return speech timings for the various identifiers.
