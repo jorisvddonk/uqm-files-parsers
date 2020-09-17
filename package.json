@@ -1,5 +1,5 @@
 {
-  "name": "uqm-files-parser",
+  "name": "uqm-files-parsers",
   "version": "1.0.0",
   "description": "Parsers for various file formats available in UQM",
   "main": "dist/index.js",
