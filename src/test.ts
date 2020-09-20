@@ -1,6 +1,11 @@
 import { parseTextLocalizationFile } from ".";
 import assert from "assert";
 import fs from "fs";
+import { parseTextSynchronizationFile } from "./parseTextSynchronization";
+
+function assertJSONEquals(input, expect) {
+  assert(JSON.stringify(input) === JSON.stringify(expect));
+}
 
 const localizations = parseTextLocalizationFile(fs.readFileSync("./src/test.txt").toString());
 
@@ -27,3 +32,12 @@ assert(localizations.get("one").localizedText === "One.");
 assert(localizations.get("two").localizedText === "Two?!");
 assert(localizations.get("three").localizedText === "Three!!");
 
+const synchronizations = parseTextSynchronizationFile(fs.readFileSync("./src/test_textSync.txt").toString());
+
+assertJSONEquals(synchronizations.get("FOO").timings, []);
+assertJSONEquals(synchronizations.get("BAR").timings, [4643]);
+assertJSONEquals(synchronizations.get("BAZ").timings, [3510, 3758]);
+
+assertJSONEquals(synchronizations.get("one").timings, []);
+assertJSONEquals(synchronizations.get("two").timings, []);
+assertJSONEquals(synchronizations.get("three").timings, []);
