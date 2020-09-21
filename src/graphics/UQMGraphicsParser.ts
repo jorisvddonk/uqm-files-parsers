@@ -39,8 +39,9 @@ export class UQMGraphicsParser extends Parser {
 	public static readonly WHITESPACE = 8;
 	public static readonly NEWLINE = 9;
 	public static readonly WORD = 10;
-	public static readonly NUMBER = 11;
-	public static readonly COMMENT = 12;
+	public static readonly INT = 11;
+	public static readonly FLOAT = 12;
+	public static readonly COMMENT = 13;
 	public static readonly RULE_graphics = 0;
 	public static readonly RULE_frame_part = 1;
 	public static readonly RULE_frame = 2;
@@ -56,7 +57,7 @@ export class UQMGraphicsParser extends Parser {
 	];
 	private static readonly _SYMBOLIC_NAMES: Array<string | undefined> = [
 		undefined, "HASH", "AT", "ANIDEF_HEADER", "ANIFRAME_HEADER", "ANIM_TYPE",
-		"BLOCK_BEGIN", "BLOCK_END", "WHITESPACE", "NEWLINE", "WORD", "NUMBER",
+		"BLOCK_BEGIN", "BLOCK_END", "WHITESPACE", "NEWLINE", "WORD", "INT", "FLOAT",
 		"COMMENT",
 	];
 	public static readonly VOCABULARY: Vocabulary = new VocabularyImpl(UQMGraphicsParser._LITERAL_NAMES, UQMGraphicsParser._SYMBOLIC_NAMES, []);
@@ -166,7 +167,7 @@ export class UQMGraphicsParser extends Parser {
 					_la = this._input.LA(1);
 				} while (_la === UQMGraphicsParser.WHITESPACE);
 				this.state = 25;
-				this.match(UQMGraphicsParser.NUMBER);
+				_localctx._transparent_color = this.match(UQMGraphicsParser.INT);
 				this.state = 27;
 				this._errHandler.sync(this);
 				_la = this._input.LA(1);
@@ -182,7 +183,7 @@ export class UQMGraphicsParser extends Parser {
 					_la = this._input.LA(1);
 				} while (_la === UQMGraphicsParser.WHITESPACE);
 				this.state = 31;
-				this.match(UQMGraphicsParser.NUMBER);
+				_localctx._colormap_index = this.match(UQMGraphicsParser.INT);
 				this.state = 33;
 				this._errHandler.sync(this);
 				_la = this._input.LA(1);
@@ -198,7 +199,7 @@ export class UQMGraphicsParser extends Parser {
 					_la = this._input.LA(1);
 				} while (_la === UQMGraphicsParser.WHITESPACE);
 				this.state = 37;
-				this.match(UQMGraphicsParser.NUMBER);
+				_localctx._hotspot_x = this.match(UQMGraphicsParser.INT);
 				this.state = 39;
 				this._errHandler.sync(this);
 				_la = this._input.LA(1);
@@ -214,7 +215,7 @@ export class UQMGraphicsParser extends Parser {
 					_la = this._input.LA(1);
 				} while (_la === UQMGraphicsParser.WHITESPACE);
 				this.state = 43;
-				this.match(UQMGraphicsParser.NUMBER);
+				_localctx._hotspot_y = this.match(UQMGraphicsParser.INT);
 				this.state = 47;
 				this._errHandler.sync(this);
 				_la = this._input.LA(1);
@@ -315,7 +316,7 @@ export class UQMGraphicsParser extends Parser {
 					_la = this._input.LA(1);
 				} while (_la === UQMGraphicsParser.WHITESPACE);
 				this.state = 66;
-				this.match(UQMGraphicsParser.NUMBER);
+				_localctx._animation_number = this.match(UQMGraphicsParser.INT);
 				this.state = 68;
 				this._errHandler.sync(this);
 				_la = this._input.LA(1);
@@ -331,7 +332,7 @@ export class UQMGraphicsParser extends Parser {
 					_la = this._input.LA(1);
 				} while (_la === UQMGraphicsParser.WHITESPACE);
 				this.state = 72;
-				this.match(UQMGraphicsParser.ANIM_TYPE);
+				_localctx._animation_type = this.match(UQMGraphicsParser.ANIM_TYPE);
 				this.state = 74;
 				this._errHandler.sync(this);
 				_la = this._input.LA(1);
@@ -357,7 +358,7 @@ export class UQMGraphicsParser extends Parser {
 							this.state = 79;
 							_localctx._name = this._input.LT(1);
 							_la = this._input.LA(1);
-							if (!((((_la) & ~0x1F) === 0 && ((1 << _la) & ((1 << UQMGraphicsParser.WHITESPACE) | (1 << UQMGraphicsParser.WORD) | (1 << UQMGraphicsParser.NUMBER))) !== 0))) {
+							if (!((((_la) & ~0x1F) === 0 && ((1 << _la) & ((1 << UQMGraphicsParser.WHITESPACE) | (1 << UQMGraphicsParser.WORD) | (1 << UQMGraphicsParser.INT) | (1 << UQMGraphicsParser.FLOAT))) !== 0))) {
 								_localctx._name = this._errHandler.recoverInline(this);
 							} else {
 								if (this._input.LA(1) === Token.EOF) {
@@ -372,7 +373,7 @@ export class UQMGraphicsParser extends Parser {
 					this.state = 82;
 					this._errHandler.sync(this);
 					_la = this._input.LA(1);
-				} while ((((_la) & ~0x1F) === 0 && ((1 << _la) & ((1 << UQMGraphicsParser.WHITESPACE) | (1 << UQMGraphicsParser.WORD) | (1 << UQMGraphicsParser.NUMBER))) !== 0));
+				} while ((((_la) & ~0x1F) === 0 && ((1 << _la) & ((1 << UQMGraphicsParser.WHITESPACE) | (1 << UQMGraphicsParser.WORD) | (1 << UQMGraphicsParser.INT) | (1 << UQMGraphicsParser.FLOAT))) !== 0));
 				this.state = 84;
 				this.match(UQMGraphicsParser.BLOCK_END);
 				this.state = 88;
@@ -450,7 +451,7 @@ export class UQMGraphicsParser extends Parser {
 					_la = this._input.LA(1);
 				} while (_la === UQMGraphicsParser.WHITESPACE);
 				this.state = 106;
-				this.match(UQMGraphicsParser.NUMBER);
+				_localctx._animation_number_reference = this.match(UQMGraphicsParser.INT);
 				this.state = 108;
 				this._errHandler.sync(this);
 				_la = this._input.LA(1);
@@ -466,7 +467,18 @@ export class UQMGraphicsParser extends Parser {
 					_la = this._input.LA(1);
 				} while (_la === UQMGraphicsParser.WHITESPACE);
 				this.state = 112;
-				this.match(UQMGraphicsParser.NUMBER);
+				_localctx._frame_duration = this._input.LT(1);
+				_la = this._input.LA(1);
+				if (!(_la === UQMGraphicsParser.INT || _la === UQMGraphicsParser.FLOAT)) {
+					_localctx._frame_duration = this._errHandler.recoverInline(this);
+				} else {
+					if (this._input.LA(1) === Token.EOF) {
+						this.matchedEOF = true;
+					}
+
+					this._errHandler.reportMatch(this);
+					this.consume();
+				}
 				this.state = 114;
 				this._errHandler.sync(this);
 				_la = this._input.LA(1);
@@ -521,7 +533,7 @@ export class UQMGraphicsParser extends Parser {
 	}
 
 	public static readonly _serializedATN: string =
-		"\x03\uC91D\uCABA\u058D\uAFBA\u4F53\u0607\uEA8B\uC241\x03\x0E\x84\x04\x02" +
+		"\x03\uC91D\uCABA\u058D\uAFBA\u4F53\u0607\uEA8B\uC241\x03\x0F\x84\x04\x02" +
 		"\t\x02\x04\x03\t\x03\x04\x04\t\x04\x04\x05\t\x05\x04\x06\t\x06\x03\x02" +
 		"\x03\x02\x03\x02\x06\x02\x10\n\x02\r\x02\x0E\x02\x11\x03\x02\x03\x02\x03" +
 		"\x03\x03\x03\x06\x03\x18\n\x03\r\x03\x0E\x03\x19\x03\x03\x03\x03\x06\x03" +
@@ -537,32 +549,32 @@ export class UQMGraphicsParser extends Parser {
 		"\x06\r\x06\x0E\x06p\x03\x06\x03\x06\x06\x06u\n\x06\r\x06\x0E\x06v\x03" +
 		"\x06\x03\x06\x03\x06\x03\x06\x07\x06}\n\x06\f\x06\x0E\x06\x80\v\x06\x03" +
 		"\x06\x03\x06\x03\x06\x02\x02\x02\x07\x02\x02\x04\x02\x06\x02\b\x02\n\x02" +
-		"\x02\x03\x04\x02\n\n\f\r\x02\x91\x02\x0F\x03\x02\x02\x02\x04\x15\x03\x02" +
-		"\x02\x02\x064\x03\x02\x02\x02\b7\x03\x02\x02\x02\n_\x03\x02\x02\x02\f" +
-		"\x10\x05\x06\x04\x02\r\x10\x05\b\x05\x02\x0E\x10\x05\n\x06\x02\x0F\f\x03" +
-		"\x02\x02\x02\x0F\r\x03\x02\x02\x02\x0F\x0E\x03\x02\x02\x02\x10\x11\x03" +
-		"\x02\x02\x02\x11\x0F\x03\x02\x02\x02\x11\x12\x03\x02\x02\x02\x12\x13\x03" +
-		"\x02\x02\x02\x13\x14\x07\x02\x02\x03\x14\x03\x03\x02\x02\x02\x15\x17\x07" +
-		"\f\x02\x02\x16\x18\x07\n\x02\x02\x17\x16\x03\x02\x02\x02\x18\x19\x03\x02" +
-		"\x02\x02\x19\x17\x03\x02\x02\x02\x19\x1A\x03\x02\x02\x02\x1A\x1B\x03\x02" +
-		"\x02\x02\x1B\x1D\x07\r\x02\x02\x1C\x1E\x07\n\x02\x02\x1D\x1C\x03\x02\x02" +
-		"\x02\x1E\x1F\x03\x02\x02\x02\x1F\x1D\x03\x02\x02\x02\x1F \x03\x02\x02" +
-		"\x02 !\x03\x02\x02\x02!#\x07\r\x02\x02\"$\x07\n\x02\x02#\"\x03\x02\x02" +
-		"\x02$%\x03\x02\x02\x02%#\x03\x02\x02\x02%&\x03\x02\x02\x02&\'\x03\x02" +
-		"\x02\x02\')\x07\r\x02\x02(*\x07\n\x02\x02)(\x03\x02\x02\x02*+\x03\x02" +
-		"\x02\x02+)\x03\x02\x02\x02+,\x03\x02\x02\x02,-\x03\x02\x02\x02-1\x07\r" +
-		"\x02\x02.0\x07\n\x02\x02/.\x03\x02\x02\x0203\x03\x02\x02\x021/\x03\x02" +
-		"\x02\x0212\x03\x02\x02\x022\x05\x03\x02\x02\x0231\x03\x02\x02\x0245\x05" +
-		"\x04\x03\x0256\x07\v\x02\x026\x07\x03\x02\x02\x0278\x07\x03\x02\x028:" +
-		"\x07\x04\x02\x029;\x07\n\x02\x02:9\x03\x02\x02\x02;<\x03\x02\x02\x02<" +
-		":\x03\x02\x02\x02<=\x03\x02\x02\x02=>\x03\x02\x02\x02>@\x07\x05\x02\x02" +
-		"?A\x07\n\x02\x02@?\x03\x02\x02\x02AB\x03\x02\x02\x02B@\x03\x02\x02\x02" +
-		"BC\x03\x02\x02\x02CD\x03\x02\x02\x02DF\x07\r\x02\x02EG\x07\n\x02\x02F" +
-		"E\x03\x02\x02\x02GH\x03\x02\x02\x02HF\x03\x02\x02\x02HI\x03\x02\x02\x02" +
-		"IJ\x03\x02\x02\x02JL\x07\x07\x02\x02KM\x07\n\x02\x02LK\x03\x02\x02\x02" +
-		"MN\x03\x02\x02\x02NL\x03\x02\x02\x02NO\x03\x02\x02\x02OP\x03\x02\x02\x02" +
-		"PR\x07\b\x02\x02QS\t\x02\x02\x02RQ\x03\x02\x02\x02ST\x03\x02\x02\x02T" +
-		"R\x03\x02\x02\x02TU\x03\x02\x02\x02UV\x03\x02\x02\x02VZ\x07\t\x02\x02" +
+		"\x02\x04\x04\x02\n\n\f\x0E\x03\x02\r\x0E\x02\x91\x02\x0F\x03\x02\x02\x02" +
+		"\x04\x15\x03\x02\x02\x02\x064\x03\x02\x02\x02\b7\x03\x02\x02\x02\n_\x03" +
+		"\x02\x02\x02\f\x10\x05\x06\x04\x02\r\x10\x05\b\x05\x02\x0E\x10\x05\n\x06" +
+		"\x02\x0F\f\x03\x02\x02\x02\x0F\r\x03\x02\x02\x02\x0F\x0E\x03\x02\x02\x02" +
+		"\x10\x11\x03\x02\x02\x02\x11\x0F\x03\x02\x02\x02\x11\x12\x03\x02\x02\x02" +
+		"\x12\x13\x03\x02\x02\x02\x13\x14\x07\x02\x02\x03\x14\x03\x03\x02\x02\x02" +
+		"\x15\x17\x07\f\x02\x02\x16\x18\x07\n\x02\x02\x17\x16\x03\x02\x02\x02\x18" +
+		"\x19\x03\x02\x02\x02\x19\x17\x03\x02\x02\x02\x19\x1A\x03\x02\x02\x02\x1A" +
+		"\x1B\x03\x02\x02\x02\x1B\x1D\x07\r\x02\x02\x1C\x1E\x07\n\x02\x02\x1D\x1C" +
+		"\x03\x02\x02\x02\x1E\x1F\x03\x02\x02\x02\x1F\x1D\x03\x02\x02\x02\x1F " +
+		"\x03\x02\x02\x02 !\x03\x02\x02\x02!#\x07\r\x02\x02\"$\x07\n\x02\x02#\"" +
+		"\x03\x02\x02\x02$%\x03\x02\x02\x02%#\x03\x02\x02\x02%&\x03\x02\x02\x02" +
+		"&\'\x03\x02\x02\x02\')\x07\r\x02\x02(*\x07\n\x02\x02)(\x03\x02\x02\x02" +
+		"*+\x03\x02\x02\x02+)\x03\x02\x02\x02+,\x03\x02\x02\x02,-\x03\x02\x02\x02" +
+		"-1\x07\r\x02\x02.0\x07\n\x02\x02/.\x03\x02\x02\x0203\x03\x02\x02\x021" +
+		"/\x03\x02\x02\x0212\x03\x02\x02\x022\x05\x03\x02\x02\x0231\x03\x02\x02" +
+		"\x0245\x05\x04\x03\x0256\x07\v\x02\x026\x07\x03\x02\x02\x0278\x07\x03" +
+		"\x02\x028:\x07\x04\x02\x029;\x07\n\x02\x02:9\x03\x02\x02\x02;<\x03\x02" +
+		"\x02\x02<:\x03\x02\x02\x02<=\x03\x02\x02\x02=>\x03\x02\x02\x02>@\x07\x05" +
+		"\x02\x02?A\x07\n\x02\x02@?\x03\x02\x02\x02AB\x03\x02\x02\x02B@\x03\x02" +
+		"\x02\x02BC\x03\x02\x02\x02CD\x03\x02\x02\x02DF\x07\r\x02\x02EG\x07\n\x02" +
+		"\x02FE\x03\x02\x02\x02GH\x03\x02\x02\x02HF\x03\x02\x02\x02HI\x03\x02\x02" +
+		"\x02IJ\x03\x02\x02\x02JL\x07\x07\x02\x02KM\x07\n\x02\x02LK\x03\x02\x02" +
+		"\x02MN\x03\x02\x02\x02NL\x03\x02\x02\x02NO\x03\x02\x02\x02OP\x03\x02\x02" +
+		"\x02PR\x07\b\x02\x02QS\t\x02\x02\x02RQ\x03\x02\x02\x02ST\x03\x02\x02\x02" +
+		"TR\x03\x02\x02\x02TU\x03\x02\x02\x02UV\x03\x02\x02\x02VZ\x07\t\x02\x02" +
 		"WY\x07\n\x02\x02XW\x03\x02\x02\x02Y\\\x03\x02\x02\x02ZX\x03\x02\x02\x02" +
 		"Z[\x03\x02\x02\x02[]\x03\x02\x02\x02\\Z\x03\x02\x02\x02]^\x07\v\x02\x02" +
 		"^\t\x03\x02\x02\x02_`\x07\x03\x02\x02`b\x07\x04\x02\x02ac\x07\n\x02\x02" +
@@ -570,7 +582,7 @@ export class UQMGraphicsParser extends Parser {
 		"ef\x03\x02\x02\x02fh\x07\x06\x02\x02gi\x07\n\x02\x02hg\x03\x02\x02\x02" +
 		"ij\x03\x02\x02\x02jh\x03\x02\x02\x02jk\x03\x02\x02\x02kl\x03\x02\x02\x02" +
 		"ln\x07\r\x02\x02mo\x07\n\x02\x02nm\x03\x02\x02\x02op\x03\x02\x02\x02p" +
-		"n\x03\x02\x02\x02pq\x03\x02\x02\x02qr\x03\x02\x02\x02rt\x07\r\x02\x02" +
+		"n\x03\x02\x02\x02pq\x03\x02\x02\x02qr\x03\x02\x02\x02rt\t\x03\x02\x02" +
 		"su\x07\n\x02\x02ts\x03\x02\x02\x02uv\x03\x02\x02\x02vt\x03\x02\x02\x02" +
 		"vw\x03\x02\x02\x02wx\x03\x02\x02\x02xy\x07\b\x02\x02yz\x05\x04\x03\x02" +
 		"z~\x07\t\x02\x02{}\x07\n\x02\x02|{\x03\x02\x02\x02}\x80\x03\x02\x02\x02" +
@@ -647,16 +659,20 @@ export class GraphicsContext extends ParserRuleContext {
 
 export class Frame_partContext extends ParserRuleContext {
 	public _filename: Token;
-	public NUMBER(): TerminalNode[];
-	public NUMBER(i: number): TerminalNode;
-	public NUMBER(i?: number): TerminalNode | TerminalNode[] {
+	public _transparent_color: Token;
+	public _colormap_index: Token;
+	public _hotspot_x: Token;
+	public _hotspot_y: Token;
+	public WORD(): TerminalNode { return this.getToken(UQMGraphicsParser.WORD, 0); }
+	public INT(): TerminalNode[];
+	public INT(i: number): TerminalNode;
+	public INT(i?: number): TerminalNode | TerminalNode[] {
 		if (i === undefined) {
-			return this.getTokens(UQMGraphicsParser.NUMBER);
+			return this.getTokens(UQMGraphicsParser.INT);
 		} else {
-			return this.getToken(UQMGraphicsParser.NUMBER, i);
+			return this.getToken(UQMGraphicsParser.INT, i);
 		}
 	}
-	public WORD(): TerminalNode { return this.getToken(UQMGraphicsParser.WORD, 0); }
 	public WHITESPACE(): TerminalNode[];
 	public WHITESPACE(i: number): TerminalNode;
 	public WHITESPACE(i?: number): TerminalNode | TerminalNode[] {
@@ -728,23 +744,25 @@ export class FrameContext extends ParserRuleContext {
 
 
 export class AnimationdefinitionContext extends ParserRuleContext {
+	public _animation_number: Token;
+	public _animation_type: Token;
 	public _name: Token;
 	public HASH(): TerminalNode { return this.getToken(UQMGraphicsParser.HASH, 0); }
 	public AT(): TerminalNode { return this.getToken(UQMGraphicsParser.AT, 0); }
 	public ANIDEF_HEADER(): TerminalNode { return this.getToken(UQMGraphicsParser.ANIDEF_HEADER, 0); }
-	public NUMBER(): TerminalNode[];
-	public NUMBER(i: number): TerminalNode;
-	public NUMBER(i?: number): TerminalNode | TerminalNode[] {
-		if (i === undefined) {
-			return this.getTokens(UQMGraphicsParser.NUMBER);
-		} else {
-			return this.getToken(UQMGraphicsParser.NUMBER, i);
-		}
-	}
-	public ANIM_TYPE(): TerminalNode { return this.getToken(UQMGraphicsParser.ANIM_TYPE, 0); }
 	public BLOCK_BEGIN(): TerminalNode { return this.getToken(UQMGraphicsParser.BLOCK_BEGIN, 0); }
 	public BLOCK_END(): TerminalNode { return this.getToken(UQMGraphicsParser.BLOCK_END, 0); }
 	public NEWLINE(): TerminalNode { return this.getToken(UQMGraphicsParser.NEWLINE, 0); }
+	public INT(): TerminalNode[];
+	public INT(i: number): TerminalNode;
+	public INT(i?: number): TerminalNode | TerminalNode[] {
+		if (i === undefined) {
+			return this.getTokens(UQMGraphicsParser.INT);
+		} else {
+			return this.getToken(UQMGraphicsParser.INT, i);
+		}
+	}
+	public ANIM_TYPE(): TerminalNode { return this.getToken(UQMGraphicsParser.ANIM_TYPE, 0); }
 	public WHITESPACE(): TerminalNode[];
 	public WHITESPACE(i: number): TerminalNode;
 	public WHITESPACE(i?: number): TerminalNode | TerminalNode[] {
@@ -761,6 +779,15 @@ export class AnimationdefinitionContext extends ParserRuleContext {
 			return this.getTokens(UQMGraphicsParser.WORD);
 		} else {
 			return this.getToken(UQMGraphicsParser.WORD, i);
+		}
+	}
+	public FLOAT(): TerminalNode[];
+	public FLOAT(i: number): TerminalNode;
+	public FLOAT(i?: number): TerminalNode | TerminalNode[] {
+		if (i === undefined) {
+			return this.getTokens(UQMGraphicsParser.FLOAT);
+		} else {
+			return this.getToken(UQMGraphicsParser.FLOAT, i);
 		}
 	}
 	constructor(parent: ParserRuleContext | undefined, invokingState: number) {
@@ -792,25 +819,28 @@ export class AnimationdefinitionContext extends ParserRuleContext {
 
 
 export class AnimationframeContext extends ParserRuleContext {
+	public _animation_number_reference: Token;
+	public _frame_duration: Token;
 	public _frameref: Frame_partContext;
 	public HASH(): TerminalNode { return this.getToken(UQMGraphicsParser.HASH, 0); }
 	public AT(): TerminalNode { return this.getToken(UQMGraphicsParser.AT, 0); }
 	public ANIFRAME_HEADER(): TerminalNode { return this.getToken(UQMGraphicsParser.ANIFRAME_HEADER, 0); }
-	public NUMBER(): TerminalNode[];
-	public NUMBER(i: number): TerminalNode;
-	public NUMBER(i?: number): TerminalNode | TerminalNode[] {
-		if (i === undefined) {
-			return this.getTokens(UQMGraphicsParser.NUMBER);
-		} else {
-			return this.getToken(UQMGraphicsParser.NUMBER, i);
-		}
-	}
 	public BLOCK_BEGIN(): TerminalNode { return this.getToken(UQMGraphicsParser.BLOCK_BEGIN, 0); }
 	public BLOCK_END(): TerminalNode { return this.getToken(UQMGraphicsParser.BLOCK_END, 0); }
 	public NEWLINE(): TerminalNode { return this.getToken(UQMGraphicsParser.NEWLINE, 0); }
+	public INT(): TerminalNode[];
+	public INT(i: number): TerminalNode;
+	public INT(i?: number): TerminalNode | TerminalNode[] {
+		if (i === undefined) {
+			return this.getTokens(UQMGraphicsParser.INT);
+		} else {
+			return this.getToken(UQMGraphicsParser.INT, i);
+		}
+	}
 	public frame_part(): Frame_partContext {
 		return this.getRuleContext(0, Frame_partContext);
 	}
+	public FLOAT(): TerminalNode | undefined { return this.tryGetToken(UQMGraphicsParser.FLOAT, 0); }
 	public WHITESPACE(): TerminalNode[];
 	public WHITESPACE(i: number): TerminalNode;
 	public WHITESPACE(i?: number): TerminalNode | TerminalNode[] {

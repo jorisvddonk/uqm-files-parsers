@@ -8,18 +8,24 @@ grammar UQMGraphics;
 graphics: (frame | animationdefinition | animationframe)+ EOF;
 
 frame_part:
-	filename = WORD WHITESPACE+ NUMBER WHITESPACE+ NUMBER WHITESPACE+ NUMBER WHITESPACE+ NUMBER
-		WHITESPACE*;
+	filename = WORD WHITESPACE+ transparent_color = INT WHITESPACE+ colormap_index = INT WHITESPACE+
+		hotspot_x = INT WHITESPACE+ hotspot_y = INT WHITESPACE*;
 
 frame: frame_part NEWLINE;
 
 animationdefinition:
-	HASH AT WHITESPACE+ ANIDEF_HEADER WHITESPACE+ NUMBER WHITESPACE+ ANIM_TYPE WHITESPACE+
-		BLOCK_BEGIN name = (WORD | WHITESPACE | NUMBER)+ BLOCK_END WHITESPACE* NEWLINE;
+	HASH AT WHITESPACE+ ANIDEF_HEADER WHITESPACE+ animation_number = INT WHITESPACE+ animation_type
+		= ANIM_TYPE WHITESPACE+ BLOCK_BEGIN name = (
+		WORD
+		| WHITESPACE
+		| INT
+		| FLOAT
+	)+ BLOCK_END WHITESPACE* NEWLINE;
 
 animationframe:
-	HASH AT WHITESPACE+ ANIFRAME_HEADER WHITESPACE+ NUMBER WHITESPACE+ NUMBER WHITESPACE+
-		BLOCK_BEGIN frameref = frame_part BLOCK_END WHITESPACE* NEWLINE;
+	HASH AT WHITESPACE+ ANIFRAME_HEADER WHITESPACE+ animation_number_reference = INT WHITESPACE+
+		frame_duration = (INT | FLOAT) WHITESPACE+ BLOCK_BEGIN frameref = frame_part BLOCK_END
+		WHITESPACE* NEWLINE;
 
 // Lexer rules:
 fragment LOWERCASE: [a-z];
@@ -55,6 +61,7 @@ WORD: (LOWERCASE | UPPERCASE) (
 		| '-'
 		| '.'
 	)+;
-NUMBER: NEGATIVE? (NUM | '.')+;
+INT: NEGATIVE? (NUM)+;
+FLOAT: NEGATIVE? (NUM | '.')+;
 
 COMMENT: HASH ~'@' ~('\n' | '\r')* NEWLINE -> skip;
