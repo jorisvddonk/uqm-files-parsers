@@ -7,6 +7,7 @@ import { ParseTreeVisitor } from "antlr4ts/tree/ParseTreeVisitor";
 import { GraphicsContext } from "./UQMGraphicsParser";
 import { Frame_partContext } from "./UQMGraphicsParser";
 import { FrameContext } from "./UQMGraphicsParser";
+import { AnimationnameContext } from "./UQMGraphicsParser";
 import { AnimationdefinitionContext } from "./UQMGraphicsParser";
 import { AnimationframeContext } from "./UQMGraphicsParser";
 
@@ -39,6 +40,13 @@ export interface UQMGraphicsVisitor<Result> extends ParseTreeVisitor<Result> {
 	 * @return the visitor result
 	 */
 	visitFrame?: (ctx: FrameContext) => Result;
+
+	/**
+	 * Visit a parse tree produced by `UQMGraphicsParser.animationname`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitAnimationname?: (ctx: AnimationnameContext) => Result;
 
 	/**
 	 * Visit a parse tree produced by `UQMGraphicsParser.animationdefinition`.

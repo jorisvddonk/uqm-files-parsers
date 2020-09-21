@@ -13,14 +13,11 @@ frame_part:
 
 frame: frame_part NEWLINE;
 
+animationname: ( WORD | WHITESPACE | INT | FLOAT)+;
+
 animationdefinition:
 	HASH AT WHITESPACE+ ANIDEF_HEADER WHITESPACE+ animation_number = INT WHITESPACE+ animation_type
-		= ANIM_TYPE WHITESPACE+ BLOCK_BEGIN name = (
-		WORD
-		| WHITESPACE
-		| INT
-		| FLOAT
-	)+ BLOCK_END WHITESPACE* NEWLINE;
+		= ANIM_TYPE WHITESPACE+ BLOCK_BEGIN name = animationname BLOCK_END WHITESPACE* NEWLINE;
 
 animationframe:
 	HASH AT WHITESPACE+ ANIFRAME_HEADER WHITESPACE+ animation_number_reference = INT WHITESPACE+

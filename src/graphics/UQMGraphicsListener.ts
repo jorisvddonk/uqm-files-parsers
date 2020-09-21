@@ -7,6 +7,7 @@ import { ParseTreeListener } from "antlr4ts/tree/ParseTreeListener";
 import { GraphicsContext } from "./UQMGraphicsParser";
 import { Frame_partContext } from "./UQMGraphicsParser";
 import { FrameContext } from "./UQMGraphicsParser";
+import { AnimationnameContext } from "./UQMGraphicsParser";
 import { AnimationdefinitionContext } from "./UQMGraphicsParser";
 import { AnimationframeContext } from "./UQMGraphicsParser";
 
@@ -48,6 +49,17 @@ export interface UQMGraphicsListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	exitFrame?: (ctx: FrameContext) => void;
+
+	/**
+	 * Enter a parse tree produced by `UQMGraphicsParser.animationname`.
+	 * @param ctx the parse tree
+	 */
+	enterAnimationname?: (ctx: AnimationnameContext) => void;
+	/**
+	 * Exit a parse tree produced by `UQMGraphicsParser.animationname`.
+	 * @param ctx the parse tree
+	 */
+	exitAnimationname?: (ctx: AnimationnameContext) => void;
 
 	/**
 	 * Enter a parse tree produced by `UQMGraphicsParser.animationdefinition`.
