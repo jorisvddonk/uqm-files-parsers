@@ -8,10 +8,11 @@
     "prepublishOnly": "npm run build",
     "build": "tsc",
     "test": "ts-node src/test.ts",
+    "fix_antlr_grammar_ts": "ts-node src/util/fix_antlr_grammar_ts.ts",
     "antlr4ts-localization": "antlr4ts -visitor grammars/UQMTextLocalization.g4 -o ./src/textLocalization",
     "antlr4ts-synchronization": "antlr4ts -visitor grammars/UQMTextSynchronization.g4 -o ./src/textSynchronization",
     "antlr4ts-graphics": "antlr4ts -visitor grammars/UQMGraphics.g4 -o ./src/graphics",
-    "antlr4ts": "npm run antlr4ts-localization && npm run antlr4ts-synchronization && npm run antlr4ts-graphics"
+    "antlr4ts": "npm run antlr4ts-localization && npm run antlr4ts-synchronization && npm run antlr4ts-graphics && npm run fix_antlr_grammar_ts"
   },
   "keywords": [],
   "author": "",
@@ -19,6 +20,7 @@
   "devDependencies": {
     "@types/node": "^14.11.1",
     "antlr4ts-cli": "^0.5.0-alpha.3",
+    "glob": "^7.1.6",
     "ts-node": "^9.0.0",
     "typescript": "^4.0.2"
   },
