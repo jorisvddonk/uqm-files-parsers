@@ -38,7 +38,7 @@ export class UQMTextLocalizationLexer extends Lexer {
 	];
 
 	public static readonly ruleNames: string[] = [
-		"LOWERCASE", "UPPERCASE", "NUMBER", "HEADER_START", "HEADER_END", "AUDIOFILE",
+		"LOWERCASE", "UPPERCASE", "NUMBER", "HEADER_START", "HEADER_END", "AUDIOFILE", 
 		"WHITESPACE", "NEWLINE", "LOWERCASE_WORD", "UPPERCASE_WORD", "WORD", "PUNCTUATION",
 	];
 
@@ -46,7 +46,7 @@ export class UQMTextLocalizationLexer extends Lexer {
 		undefined, "'#('", "')'",
 	];
 	private static readonly _SYMBOLIC_NAMES: Array<string | undefined> = [
-		undefined, "HEADER_START", "HEADER_END", "AUDIOFILE", "WHITESPACE", "NEWLINE",
+		undefined, "HEADER_START", "HEADER_END", "AUDIOFILE", "WHITESPACE", "NEWLINE", 
 		"LOWERCASE_WORD", "UPPERCASE_WORD", "WORD", "PUNCTUATION",
 	];
 	public static readonly VOCABULARY: Vocabulary = new VocabularyImpl(UQMTextLocalizationLexer._LITERAL_NAMES, UQMTextLocalizationLexer._SYMBOLIC_NAMES, []);

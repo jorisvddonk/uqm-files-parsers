@@ -38,16 +38,16 @@ export class UQMTextSynchronizationLexer extends Lexer {
 	];
 
 	public static readonly ruleNames: string[] = [
-		"LOWERCASE", "UPPERCASE", "NUM", "HEADER_START", "HEADER_END", "WHITESPACE",
+		"LOWERCASE", "UPPERCASE", "NUM", "HEADER_START", "HEADER_END", "WHITESPACE", 
 		"NEWLINE", "NUMBER", "LOWERCASE_WORD", "UPPERCASE_WORD", "WORD", "COMMA",
 	];
 
 	private static readonly _LITERAL_NAMES: Array<string | undefined> = [
-		undefined, "'#('", "')'", undefined, undefined, undefined, undefined,
+		undefined, "'#('", "')'", undefined, undefined, undefined, undefined, 
 		undefined, undefined, "','",
 	];
 	private static readonly _SYMBOLIC_NAMES: Array<string | undefined> = [
-		undefined, "HEADER_START", "HEADER_END", "WHITESPACE", "NEWLINE", "NUMBER",
+		undefined, "HEADER_START", "HEADER_END", "WHITESPACE", "NEWLINE", "NUMBER", 
 		"LOWERCASE_WORD", "UPPERCASE_WORD", "WORD", "COMMA",
 	];
 	public static readonly VOCABULARY: Vocabulary = new VocabularyImpl(UQMTextSynchronizationLexer._LITERAL_NAMES, UQMTextSynchronizationLexer._SYMBOLIC_NAMES, []);

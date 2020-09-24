@@ -42,8 +42,8 @@ export class UQMGraphicsLexer extends Lexer {
 	];
 
 	public static readonly ruleNames: string[] = [
-		"LOWERCASE", "UPPERCASE", "NUM", "NEGATIVE", "HASH", "AT", "ANIDEF_HEADER",
-		"ANIFRAME_HEADER", "ANIM_TYPE", "BLOCK_BEGIN", "BLOCK_END", "WHITESPACE",
+		"LOWERCASE", "UPPERCASE", "NUM", "NEGATIVE", "HASH", "AT", "ANIDEF_HEADER", 
+		"ANIFRAME_HEADER", "ANIM_TYPE", "BLOCK_BEGIN", "BLOCK_END", "WHITESPACE", 
 		"NEWLINE", "WORD", "INT", "FLOAT", "COMMENT",
 	];
 
@@ -51,8 +51,8 @@ export class UQMGraphicsLexer extends Lexer {
 		undefined, "'#'", "'@'", "'anidef'", "'aniframe'", undefined, "'['", "']'",
 	];
 	private static readonly _SYMBOLIC_NAMES: Array<string | undefined> = [
-		undefined, "HASH", "AT", "ANIDEF_HEADER", "ANIFRAME_HEADER", "ANIM_TYPE",
-		"BLOCK_BEGIN", "BLOCK_END", "WHITESPACE", "NEWLINE", "WORD", "INT", "FLOAT",
+		undefined, "HASH", "AT", "ANIDEF_HEADER", "ANIFRAME_HEADER", "ANIM_TYPE", 
+		"BLOCK_BEGIN", "BLOCK_END", "WHITESPACE", "NEWLINE", "WORD", "INT", "FLOAT", 
 		"COMMENT",
 	];
 	public static readonly VOCABULARY: Vocabulary = new VocabularyImpl(UQMGraphicsLexer._LITERAL_NAMES, UQMGraphicsLexer._SYMBOLIC_NAMES, []);

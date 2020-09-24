@@ -49,11 +49,11 @@ export class UQMTextSynchronizationParser extends Parser {
 	];
 
 	private static readonly _LITERAL_NAMES: Array<string | undefined> = [
-		undefined, "'#('", "')'", undefined, undefined, undefined, undefined,
+		undefined, "'#('", "')'", undefined, undefined, undefined, undefined, 
 		undefined, undefined, "','",
 	];
 	private static readonly _SYMBOLIC_NAMES: Array<string | undefined> = [
-		undefined, "HEADER_START", "HEADER_END", "WHITESPACE", "NEWLINE", "NUMBER",
+		undefined, "HEADER_START", "HEADER_END", "WHITESPACE", "NEWLINE", "NUMBER", 
 		"LOWERCASE_WORD", "UPPERCASE_WORD", "WORD", "COMMA",
 	];
 	public static readonly VOCABULARY: Vocabulary = new VocabularyImpl(UQMTextSynchronizationParser._LITERAL_NAMES, UQMTextSynchronizationParser._SYMBOLIC_NAMES, []);
@@ -86,22 +86,22 @@ export class UQMTextSynchronizationParser extends Parser {
 		try {
 			this.enterOuterAlt(_localctx, 1);
 			{
-				this.state = 11;
+			this.state = 11;
+			this._errHandler.sync(this);
+			_la = this._input.LA(1);
+			do {
+				{
+				{
+				this.state = 10;
+				this.synchronization();
+				}
+				}
+				this.state = 13;
 				this._errHandler.sync(this);
 				_la = this._input.LA(1);
-				do {
-					{
-						{
-							this.state = 10;
-							this.synchronization();
-						}
-					}
-					this.state = 13;
-					this._errHandler.sync(this);
-					_la = this._input.LA(1);
-				} while (_la === UQMTextSynchronizationParser.HEADER_START);
-				this.state = 15;
-				this.match(UQMTextSynchronizationParser.EOF);
+			} while (_la === UQMTextSynchronizationParser.HEADER_START);
+			this.state = 15;
+			this.match(UQMTextSynchronizationParser.EOF);
 			}
 		}
 		catch (re) {
@@ -126,25 +126,25 @@ export class UQMTextSynchronizationParser extends Parser {
 		try {
 			this.enterOuterAlt(_localctx, 1);
 			{
-				this.state = 17;
-				this.match(UQMTextSynchronizationParser.HEADER_START);
-				this.state = 18;
-				_localctx._identifier = this._input.LT(1);
-				_la = this._input.LA(1);
-				if (!((((_la) & ~0x1F) === 0 && ((1 << _la) & ((1 << UQMTextSynchronizationParser.LOWERCASE_WORD) | (1 << UQMTextSynchronizationParser.UPPERCASE_WORD) | (1 << UQMTextSynchronizationParser.WORD))) !== 0))) {
-					_localctx._identifier = this._errHandler.recoverInline(this);
-				} else {
-					if (this._input.LA(1) === Token.EOF) {
-						this.matchedEOF = true;
-					}
-
-					this._errHandler.reportMatch(this);
-					this.consume();
+			this.state = 17;
+			this.match(UQMTextSynchronizationParser.HEADER_START);
+			this.state = 18;
+			_localctx._identifier = this._input.LT(1);
+			_la = this._input.LA(1);
+			if (!((((_la) & ~0x1F) === 0 && ((1 << _la) & ((1 << UQMTextSynchronizationParser.LOWERCASE_WORD) | (1 << UQMTextSynchronizationParser.UPPERCASE_WORD) | (1 << UQMTextSynchronizationParser.WORD))) !== 0))) {
+				_localctx._identifier = this._errHandler.recoverInline(this);
+			} else {
+				if (this._input.LA(1) === Token.EOF) {
+					this.matchedEOF = true;
 				}
-				this.state = 19;
-				this.match(UQMTextSynchronizationParser.HEADER_END);
-				this.state = 20;
-				this.match(UQMTextSynchronizationParser.WHITESPACE);
+
+				this._errHandler.reportMatch(this);
+				this.consume();
+			}
+			this.state = 19;
+			this.match(UQMTextSynchronizationParser.HEADER_END);
+			this.state = 20;
+			this.match(UQMTextSynchronizationParser.WHITESPACE);
 			}
 		}
 		catch (re) {
@@ -169,46 +169,46 @@ export class UQMTextSynchronizationParser extends Parser {
 			let _alt: number;
 			this.enterOuterAlt(_localctx, 1);
 			{
-				this.state = 25;
-				this._errHandler.sync(this);
-				_alt = 1;
-				do {
-					switch (_alt) {
-						case 1:
-							{
-								this.state = 25;
-								this._errHandler.sync(this);
-								switch (this._input.LA(1)) {
-									case UQMTextSynchronizationParser.NUMBER:
-										{
-											this.state = 22;
-											this.timing();
-										}
-										break;
-									case UQMTextSynchronizationParser.COMMA:
-										{
-											this.state = 23;
-											this.match(UQMTextSynchronizationParser.COMMA);
-										}
-										break;
-									case UQMTextSynchronizationParser.WHITESPACE:
-										{
-											this.state = 24;
-											this.match(UQMTextSynchronizationParser.WHITESPACE);
-										}
-										break;
-									default:
-										throw new NoViableAltException(this);
-								}
-							}
-							break;
-						default:
-							throw new NoViableAltException(this);
-					}
-					this.state = 27;
+			this.state = 25;
+			this._errHandler.sync(this);
+			_alt = 1;
+			do {
+				switch (_alt) {
+				case 1:
+					{
+					this.state = 25;
 					this._errHandler.sync(this);
-					_alt = this.interpreter.adaptivePredict(this._input, 2, this._ctx);
-				} while (_alt !== 2 && _alt !== ATN.INVALID_ALT_NUMBER);
+					switch (this._input.LA(1)) {
+					case UQMTextSynchronizationParser.NUMBER:
+						{
+						this.state = 22;
+						this.timing();
+						}
+						break;
+					case UQMTextSynchronizationParser.COMMA:
+						{
+						this.state = 23;
+						this.match(UQMTextSynchronizationParser.COMMA);
+						}
+						break;
+					case UQMTextSynchronizationParser.WHITESPACE:
+						{
+						this.state = 24;
+						this.match(UQMTextSynchronizationParser.WHITESPACE);
+						}
+						break;
+					default:
+						throw new NoViableAltException(this);
+					}
+					}
+					break;
+				default:
+					throw new NoViableAltException(this);
+				}
+				this.state = 27;
+				this._errHandler.sync(this);
+				_alt = this.interpreter.adaptivePredict(this._input, 2, this._ctx);
+			} while (_alt !== 2 && _alt !== ATN.INVALID_ALT_NUMBER);
 			}
 		}
 		catch (re) {
@@ -233,26 +233,26 @@ export class UQMTextSynchronizationParser extends Parser {
 			let _alt: number;
 			this.enterOuterAlt(_localctx, 1);
 			{
-				this.state = 30;
-				this._errHandler.sync(this);
-				_alt = 1;
-				do {
-					switch (_alt) {
-						case 1:
-							{
-								{
-									this.state = 29;
-									this.match(UQMTextSynchronizationParser.NUMBER);
-								}
-							}
-							break;
-						default:
-							throw new NoViableAltException(this);
+			this.state = 30;
+			this._errHandler.sync(this);
+			_alt = 1;
+			do {
+				switch (_alt) {
+				case 1:
+					{
+					{
+					this.state = 29;
+					this.match(UQMTextSynchronizationParser.NUMBER);
 					}
-					this.state = 32;
-					this._errHandler.sync(this);
-					_alt = this.interpreter.adaptivePredict(this._input, 3, this._ctx);
-				} while (_alt !== 2 && _alt !== ATN.INVALID_ALT_NUMBER);
+					}
+					break;
+				default:
+					throw new NoViableAltException(this);
+				}
+				this.state = 32;
+				this._errHandler.sync(this);
+				_alt = this.interpreter.adaptivePredict(this._input, 3, this._ctx);
+			} while (_alt !== 2 && _alt !== ATN.INVALID_ALT_NUMBER);
 			}
 		}
 		catch (re) {
@@ -277,30 +277,30 @@ export class UQMTextSynchronizationParser extends Parser {
 		try {
 			this.enterOuterAlt(_localctx, 1);
 			{
-				this.state = 34;
-				this.header();
-				this.state = 36;
-				this._errHandler.sync(this);
-				switch (this.interpreter.adaptivePredict(this._input, 4, this._ctx)) {
-					case 1:
-						{
-							this.state = 35;
-							this.timings();
-						}
-						break;
+			this.state = 34;
+			this.header();
+			this.state = 36;
+			this._errHandler.sync(this);
+			switch ( this.interpreter.adaptivePredict(this._input, 4, this._ctx) ) {
+			case 1:
+				{
+				this.state = 35;
+				this.timings();
 				}
-				this.state = 39;
-				this._errHandler.sync(this);
-				_la = this._input.LA(1);
-				if (_la === UQMTextSynchronizationParser.WHITESPACE) {
-					{
-						this.state = 38;
-						this.match(UQMTextSynchronizationParser.WHITESPACE);
-					}
+				break;
+			}
+			this.state = 39;
+			this._errHandler.sync(this);
+			_la = this._input.LA(1);
+			if (_la === UQMTextSynchronizationParser.WHITESPACE) {
+				{
+				this.state = 38;
+				this.match(UQMTextSynchronizationParser.WHITESPACE);
 				}
+			}
 
-				this.state = 41;
-				this.match(UQMTextSynchronizationParser.NEWLINE);
+			this.state = 41;
+			this.match(UQMTextSynchronizationParser.NEWLINE);
 			}
 		}
 		catch (re) {
