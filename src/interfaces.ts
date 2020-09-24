@@ -45,6 +45,8 @@ export interface Animation {
   frames: AnimationFrame[];
   base_restart_rate?: number;
   random_restart_rate?: number;
+  block_mask?: number;
+  do_not_play_when_other_anim: string[];
 }
 
 export type AnimationsMap = Map<string, Animation>;

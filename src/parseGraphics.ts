@@ -63,12 +63,15 @@ export function parseGraphics(input: string) {
     enterAnimationdefinition(context: AnimationdefinitionContext) {
       const b_r_r = context._base_restart_rate !== undefined ? parseFloat(context._base_restart_rate.text) : undefined;
       const r_r_r = context._random_restart_rate !== undefined ? parseFloat(context._random_restart_rate.text) : undefined;
+      const bm = context._block_mask !== undefined ? parseInt(context._block_mask.text) : undefined;
       const animation: Animation = {
         name: context._name.text,
         type: stringToAnimationTypeEnum(context._animation_type.text),
         frames: [],
         base_restart_rate: b_r_r,
-        random_restart_rate: r_r_r
+        random_restart_rate: r_r_r,
+        block_mask: bm,
+        do_not_play_when_other_anim: [] // filled out later! this is a conversion from the block_mask.
       }
       this.numberedAnimationsMap.set(parseInt(context._animation_number.text), animation);
     }
@@ -100,6 +103,15 @@ export function parseGraphics(input: string) {
     getGraphics() {
       this.graphics.animations = new Map();
       this.numberedAnimationsMap.forEach(anim => {
+        if (anim.block_mask !== undefined) {
+          anim.do_not_play_when_other_anim = anim.block_mask.toString(2).split('').map(x => parseInt(x)).reverse().reduce((memo, isExclusive, index) => {
+            // if isExclusive is 1, this.numberedAnimationsMap.get(index) is exclusive.
+            if (isExclusive === 1) {
+              memo.push(this.numberedAnimationsMap.get(index).name);
+            }
+            return memo;
+          }, []);
+        }
         this.graphics.animations.set(anim.name, anim);
       });
       return this.graphics;

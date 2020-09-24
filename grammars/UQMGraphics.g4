@@ -21,7 +21,7 @@ animationdefinition:
 		WHITESPACE+ base_restart_rate = (INT | FLOAT) WHITESPACE+ random_restart_rate = (
 			INT
 			| FLOAT
-		)
+		) WHITESPACE+ block_mask = INT
 	)? WHITESPACE+ BLOCK_BEGIN name = animationname BLOCK_END WHITESPACE* NEWLINE;
 
 animationframe:
