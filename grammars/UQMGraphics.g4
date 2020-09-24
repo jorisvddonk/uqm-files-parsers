@@ -17,7 +17,12 @@ animationname: ( WORD | WHITESPACE | INT | FLOAT)+;
 
 animationdefinition:
 	HASH AT WHITESPACE+ ANIDEF_HEADER WHITESPACE+ animation_number = INT WHITESPACE+ animation_type
-		= ANIM_TYPE WHITESPACE+ BLOCK_BEGIN name = animationname BLOCK_END WHITESPACE* NEWLINE;
+		= ANIM_TYPE (
+		WHITESPACE+ base_restart_rate = (INT | FLOAT) WHITESPACE+ random_restart_rate = (
+			INT
+			| FLOAT
+		)
+	)? WHITESPACE+ BLOCK_BEGIN name = animationname BLOCK_END WHITESPACE* NEWLINE;
 
 animationframe:
 	HASH AT WHITESPACE+ ANIFRAME_HEADER WHITESPACE+ animation_number_reference = INT WHITESPACE+

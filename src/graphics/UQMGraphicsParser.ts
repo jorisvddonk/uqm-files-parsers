@@ -383,41 +383,103 @@ export class UQMGraphicsParser extends Parser {
 			} while (_la === UQMGraphicsParser.WHITESPACE);
 			this.state = 79;
 			_localctx._animation_type = this.match(UQMGraphicsParser.ANIM_TYPE);
-			this.state = 81;
+			this.state = 92;
+			this._errHandler.sync(this);
+			switch ( this.interpreter.adaptivePredict(this._input, 13, this._ctx) ) {
+			case 1:
+				{
+				this.state = 81;
+				this._errHandler.sync(this);
+				_la = this._input.LA(1);
+				do {
+					{
+					{
+					this.state = 80;
+					this.match(UQMGraphicsParser.WHITESPACE);
+					}
+					}
+					this.state = 83;
+					this._errHandler.sync(this);
+					_la = this._input.LA(1);
+				} while (_la === UQMGraphicsParser.WHITESPACE);
+				this.state = 85;
+				_localctx._base_restart_rate = this._input.LT(1);
+				_la = this._input.LA(1);
+				if (!(_la === UQMGraphicsParser.INT || _la === UQMGraphicsParser.FLOAT)) {
+					_localctx._base_restart_rate = this._errHandler.recoverInline(this);
+				} else {
+					if (this._input.LA(1) === Token.EOF) {
+						this.matchedEOF = true;
+					}
+
+					this._errHandler.reportMatch(this);
+					this.consume();
+				}
+				this.state = 87;
+				this._errHandler.sync(this);
+				_la = this._input.LA(1);
+				do {
+					{
+					{
+					this.state = 86;
+					this.match(UQMGraphicsParser.WHITESPACE);
+					}
+					}
+					this.state = 89;
+					this._errHandler.sync(this);
+					_la = this._input.LA(1);
+				} while (_la === UQMGraphicsParser.WHITESPACE);
+				this.state = 91;
+				_localctx._random_restart_rate = this._input.LT(1);
+				_la = this._input.LA(1);
+				if (!(_la === UQMGraphicsParser.INT || _la === UQMGraphicsParser.FLOAT)) {
+					_localctx._random_restart_rate = this._errHandler.recoverInline(this);
+				} else {
+					if (this._input.LA(1) === Token.EOF) {
+						this.matchedEOF = true;
+					}
+
+					this._errHandler.reportMatch(this);
+					this.consume();
+				}
+				}
+				break;
+			}
+			this.state = 95;
 			this._errHandler.sync(this);
 			_la = this._input.LA(1);
 			do {
 				{
 				{
-				this.state = 80;
+				this.state = 94;
 				this.match(UQMGraphicsParser.WHITESPACE);
 				}
 				}
-				this.state = 83;
+				this.state = 97;
 				this._errHandler.sync(this);
 				_la = this._input.LA(1);
 			} while (_la === UQMGraphicsParser.WHITESPACE);
-			this.state = 85;
+			this.state = 99;
 			this.match(UQMGraphicsParser.BLOCK_BEGIN);
-			this.state = 86;
+			this.state = 100;
 			_localctx._name = this.animationname();
-			this.state = 87;
+			this.state = 101;
 			this.match(UQMGraphicsParser.BLOCK_END);
-			this.state = 91;
+			this.state = 105;
 			this._errHandler.sync(this);
 			_la = this._input.LA(1);
 			while (_la === UQMGraphicsParser.WHITESPACE) {
 				{
 				{
-				this.state = 88;
+				this.state = 102;
 				this.match(UQMGraphicsParser.WHITESPACE);
 				}
 				}
-				this.state = 93;
+				this.state = 107;
 				this._errHandler.sync(this);
 				_la = this._input.LA(1);
 			}
-			this.state = 94;
+			this.state = 108;
 			this.match(UQMGraphicsParser.NEWLINE);
 			}
 		}
@@ -443,57 +505,57 @@ export class UQMGraphicsParser extends Parser {
 		try {
 			this.enterOuterAlt(_localctx, 1);
 			{
-			this.state = 96;
+			this.state = 110;
 			this.match(UQMGraphicsParser.HASH);
-			this.state = 97;
-			this.match(UQMGraphicsParser.AT);
-			this.state = 99;
-			this._errHandler.sync(this);
-			_la = this._input.LA(1);
-			do {
-				{
-				{
-				this.state = 98;
-				this.match(UQMGraphicsParser.WHITESPACE);
-				}
-				}
-				this.state = 101;
-				this._errHandler.sync(this);
-				_la = this._input.LA(1);
-			} while (_la === UQMGraphicsParser.WHITESPACE);
-			this.state = 103;
-			this.match(UQMGraphicsParser.ANIFRAME_HEADER);
-			this.state = 105;
-			this._errHandler.sync(this);
-			_la = this._input.LA(1);
-			do {
-				{
-				{
-				this.state = 104;
-				this.match(UQMGraphicsParser.WHITESPACE);
-				}
-				}
-				this.state = 107;
-				this._errHandler.sync(this);
-				_la = this._input.LA(1);
-			} while (_la === UQMGraphicsParser.WHITESPACE);
-			this.state = 109;
-			_localctx._animation_number_reference = this.match(UQMGraphicsParser.INT);
 			this.state = 111;
+			this.match(UQMGraphicsParser.AT);
+			this.state = 113;
 			this._errHandler.sync(this);
 			_la = this._input.LA(1);
 			do {
 				{
 				{
-				this.state = 110;
+				this.state = 112;
 				this.match(UQMGraphicsParser.WHITESPACE);
 				}
 				}
-				this.state = 113;
+				this.state = 115;
 				this._errHandler.sync(this);
 				_la = this._input.LA(1);
 			} while (_la === UQMGraphicsParser.WHITESPACE);
-			this.state = 115;
+			this.state = 117;
+			this.match(UQMGraphicsParser.ANIFRAME_HEADER);
+			this.state = 119;
+			this._errHandler.sync(this);
+			_la = this._input.LA(1);
+			do {
+				{
+				{
+				this.state = 118;
+				this.match(UQMGraphicsParser.WHITESPACE);
+				}
+				}
+				this.state = 121;
+				this._errHandler.sync(this);
+				_la = this._input.LA(1);
+			} while (_la === UQMGraphicsParser.WHITESPACE);
+			this.state = 123;
+			_localctx._animation_number_reference = this.match(UQMGraphicsParser.INT);
+			this.state = 125;
+			this._errHandler.sync(this);
+			_la = this._input.LA(1);
+			do {
+				{
+				{
+				this.state = 124;
+				this.match(UQMGraphicsParser.WHITESPACE);
+				}
+				}
+				this.state = 127;
+				this._errHandler.sync(this);
+				_la = this._input.LA(1);
+			} while (_la === UQMGraphicsParser.WHITESPACE);
+			this.state = 129;
 			_localctx._frame_duration = this._input.LT(1);
 			_la = this._input.LA(1);
 			if (!(_la === UQMGraphicsParser.INT || _la === UQMGraphicsParser.FLOAT)) {
@@ -506,41 +568,41 @@ export class UQMGraphicsParser extends Parser {
 				this._errHandler.reportMatch(this);
 				this.consume();
 			}
-			this.state = 117;
+			this.state = 131;
 			this._errHandler.sync(this);
 			_la = this._input.LA(1);
 			do {
 				{
 				{
-				this.state = 116;
+				this.state = 130;
 				this.match(UQMGraphicsParser.WHITESPACE);
 				}
 				}
-				this.state = 119;
+				this.state = 133;
 				this._errHandler.sync(this);
 				_la = this._input.LA(1);
 			} while (_la === UQMGraphicsParser.WHITESPACE);
-			this.state = 121;
+			this.state = 135;
 			this.match(UQMGraphicsParser.BLOCK_BEGIN);
-			this.state = 122;
+			this.state = 136;
 			_localctx._frameref = this.frame_part();
-			this.state = 123;
+			this.state = 137;
 			this.match(UQMGraphicsParser.BLOCK_END);
-			this.state = 127;
+			this.state = 141;
 			this._errHandler.sync(this);
 			_la = this._input.LA(1);
 			while (_la === UQMGraphicsParser.WHITESPACE) {
 				{
 				{
-				this.state = 124;
+				this.state = 138;
 				this.match(UQMGraphicsParser.WHITESPACE);
 				}
 				}
-				this.state = 129;
+				this.state = 143;
 				this._errHandler.sync(this);
 				_la = this._input.LA(1);
 			}
-			this.state = 130;
+			this.state = 144;
 			this.match(UQMGraphicsParser.NEWLINE);
 			}
 		}
@@ -560,7 +622,7 @@ export class UQMGraphicsParser extends Parser {
 	}
 
 	public static readonly _serializedATN: string =
-		"\x03\uC91D\uCABA\u058D\uAFBA\u4F53\u0607\uEA8B\uC241\x03\x0F\x87\x04\x02" +
+		"\x03\uC91D\uCABA\u058D\uAFBA\u4F53\u0607\uEA8B\uC241\x03\x0F\x95\x04\x02" +
 		"\t\x02\x04\x03\t\x03\x04\x04\t\x04\x04\x05\t\x05\x04\x06\t\x06\x04\x07" +
 		"\t\x07\x03\x02\x03\x02\x03\x02\x06\x02\x12\n\x02\r\x02\x0E\x02\x13\x03" +
 		"\x02\x03\x02\x03\x03\x03\x03\x06\x03\x1A\n\x03\r\x03\x0E\x03\x1B\x03\x03" +
@@ -570,53 +632,60 @@ export class UQMGraphicsParser extends Parser {
 		"\x05\x06\x05;\n\x05\r\x05\x0E\x05<\x03\x06\x03\x06\x03\x06\x06\x06B\n" +
 		"\x06\r\x06\x0E\x06C\x03\x06\x03\x06\x06\x06H\n\x06\r\x06\x0E\x06I\x03" +
 		"\x06\x03\x06\x06\x06N\n\x06\r\x06\x0E\x06O\x03\x06\x03\x06\x06\x06T\n" +
-		"\x06\r\x06\x0E\x06U\x03\x06\x03\x06\x03\x06\x03\x06\x07\x06\\\n\x06\f" +
-		"\x06\x0E\x06_\v\x06\x03\x06\x03\x06\x03\x07\x03\x07\x03\x07\x06\x07f\n" +
-		"\x07\r\x07\x0E\x07g\x03\x07\x03\x07\x06\x07l\n\x07\r\x07\x0E\x07m\x03" +
-		"\x07\x03\x07\x06\x07r\n\x07\r\x07\x0E\x07s\x03\x07\x03\x07\x06\x07x\n" +
-		"\x07\r\x07\x0E\x07y\x03\x07\x03\x07\x03\x07\x03\x07\x07\x07\x80\n\x07" +
-		"\f\x07\x0E\x07\x83\v\x07\x03\x07\x03\x07\x03\x07\x02\x02\x02\b\x02\x02" +
-		"\x04\x02\x06\x02\b\x02\n\x02\f\x02\x02\x04\x04\x02\n\n\f\x0E\x03\x02\r" +
-		"\x0E\x02\x93\x02\x11\x03\x02\x02\x02\x04\x17\x03\x02\x02\x02\x066\x03" +
-		"\x02\x02\x02\b:\x03\x02\x02\x02\n>\x03\x02\x02\x02\fb\x03\x02\x02\x02" +
-		"\x0E\x12\x05\x06\x04\x02\x0F\x12\x05\n\x06\x02\x10\x12\x05\f\x07\x02\x11" +
-		"\x0E\x03\x02\x02\x02\x11\x0F\x03\x02\x02\x02\x11\x10\x03\x02\x02\x02\x12" +
-		"\x13\x03\x02\x02\x02\x13\x11\x03\x02\x02\x02\x13\x14\x03\x02\x02\x02\x14" +
-		"\x15\x03\x02\x02\x02\x15\x16\x07\x02\x02\x03\x16\x03\x03\x02\x02\x02\x17" +
-		"\x19\x07\f\x02\x02\x18\x1A\x07\n\x02\x02\x19\x18\x03\x02\x02\x02\x1A\x1B" +
-		"\x03\x02\x02\x02\x1B\x19\x03\x02\x02\x02\x1B\x1C\x03\x02\x02\x02\x1C\x1D" +
-		"\x03\x02\x02\x02\x1D\x1F\x07\r\x02\x02\x1E \x07\n\x02\x02\x1F\x1E\x03" +
-		"\x02\x02\x02 !\x03\x02\x02\x02!\x1F\x03\x02\x02\x02!\"\x03\x02\x02\x02" +
-		"\"#\x03\x02\x02\x02#%\x07\r\x02\x02$&\x07\n\x02\x02%$\x03\x02\x02\x02" +
-		"&\'\x03\x02\x02\x02\'%\x03\x02\x02\x02\'(\x03\x02\x02\x02()\x03\x02\x02" +
-		"\x02)+\x07\r\x02\x02*,\x07\n\x02\x02+*\x03\x02\x02\x02,-\x03\x02\x02\x02" +
-		"-+\x03\x02\x02\x02-.\x03\x02\x02\x02./\x03\x02\x02\x02/3\x07\r\x02\x02" +
-		"02\x07\n\x02\x0210\x03\x02\x02\x0225\x03\x02\x02\x0231\x03\x02\x02\x02" +
-		"34\x03\x02\x02\x024\x05\x03\x02\x02\x0253\x03\x02\x02\x0267\x05\x04\x03" +
-		"\x0278\x07\v\x02\x028\x07\x03\x02\x02\x029;\t\x02\x02\x02:9\x03\x02\x02" +
-		"\x02;<\x03\x02\x02\x02<:\x03\x02\x02\x02<=\x03\x02\x02\x02=\t\x03\x02" +
-		"\x02\x02>?\x07\x03\x02\x02?A\x07\x04\x02\x02@B\x07\n\x02\x02A@\x03\x02" +
-		"\x02\x02BC\x03\x02\x02\x02CA\x03\x02\x02\x02CD\x03\x02\x02\x02DE\x03\x02" +
-		"\x02\x02EG\x07\x05\x02\x02FH\x07\n\x02\x02GF\x03\x02\x02\x02HI\x03\x02" +
-		"\x02\x02IG\x03\x02\x02\x02IJ\x03\x02\x02\x02JK\x03\x02\x02\x02KM\x07\r" +
-		"\x02\x02LN\x07\n\x02\x02ML\x03\x02\x02\x02NO\x03\x02\x02\x02OM\x03\x02" +
-		"\x02\x02OP\x03\x02\x02\x02PQ\x03\x02\x02\x02QS\x07\x07\x02\x02RT\x07\n" +
-		"\x02\x02SR\x03\x02\x02\x02TU\x03\x02\x02\x02US\x03\x02\x02\x02UV\x03\x02" +
-		"\x02\x02VW\x03\x02\x02\x02WX\x07\b\x02\x02XY\x05\b\x05\x02Y]\x07\t\x02" +
-		"\x02Z\\\x07\n\x02\x02[Z\x03\x02\x02\x02\\_\x03\x02\x02\x02][\x03\x02\x02" +
-		"\x02]^\x03\x02\x02\x02^`\x03\x02\x02\x02_]\x03\x02\x02\x02`a\x07\v\x02" +
-		"\x02a\v\x03\x02\x02\x02bc\x07\x03\x02\x02ce\x07\x04\x02\x02df\x07\n\x02" +
-		"\x02ed\x03\x02\x02\x02fg\x03\x02\x02\x02ge\x03\x02\x02\x02gh\x03\x02\x02" +
-		"\x02hi\x03\x02\x02\x02ik\x07\x06\x02\x02jl\x07\n\x02\x02kj\x03\x02\x02" +
-		"\x02lm\x03\x02\x02\x02mk\x03\x02\x02\x02mn\x03\x02\x02\x02no\x03\x02\x02" +
-		"\x02oq\x07\r\x02\x02pr\x07\n\x02\x02qp\x03\x02\x02\x02rs\x03\x02\x02\x02" +
-		"sq\x03\x02\x02\x02st\x03\x02\x02\x02tu\x03\x02\x02\x02uw\t\x03\x02\x02" +
-		"vx\x07\n\x02\x02wv\x03\x02\x02\x02xy\x03\x02\x02\x02yw\x03\x02\x02\x02" +
-		"yz\x03\x02\x02\x02z{\x03\x02\x02\x02{|\x07\b\x02\x02|}\x05\x04\x03\x02" +
-		"}\x81\x07\t\x02\x02~\x80\x07\n\x02\x02\x7F~\x03\x02\x02\x02\x80\x83\x03" +
-		"\x02\x02\x02\x81\x7F\x03\x02\x02\x02\x81\x82\x03\x02\x02\x02\x82\x84\x03" +
-		"\x02\x02\x02\x83\x81\x03\x02\x02\x02\x84\x85\x07\v\x02\x02\x85\r\x03\x02" +
-		"\x02\x02\x14\x11\x13\x1B!\'-3<CIOU]gmsy\x81";
+		"\x06\r\x06\x0E\x06U\x03\x06\x03\x06\x06\x06Z\n\x06\r\x06\x0E\x06[\x03" +
+		"\x06\x05\x06_\n\x06\x03\x06\x06\x06b\n\x06\r\x06\x0E\x06c\x03\x06\x03" +
+		"\x06\x03\x06\x03\x06\x07\x06j\n\x06\f\x06\x0E\x06m\v\x06\x03\x06\x03\x06" +
+		"\x03\x07\x03\x07\x03\x07\x06\x07t\n\x07\r\x07\x0E\x07u\x03\x07\x03\x07" +
+		"\x06\x07z\n\x07\r\x07\x0E\x07{\x03\x07\x03\x07\x06\x07\x80\n\x07\r\x07" +
+		"\x0E\x07\x81\x03\x07\x03\x07\x06\x07\x86\n\x07\r\x07\x0E\x07\x87\x03\x07" +
+		"\x03\x07\x03\x07\x03\x07\x07\x07\x8E\n\x07\f\x07\x0E\x07\x91\v\x07\x03" +
+		"\x07\x03\x07\x03\x07\x02\x02\x02\b\x02\x02\x04\x02\x06\x02\b\x02\n\x02" +
+		"\f\x02\x02\x04\x04\x02\n\n\f\x0E\x03\x02\r\x0E\x02\xA4\x02\x11\x03\x02" +
+		"\x02\x02\x04\x17\x03\x02\x02\x02\x066\x03\x02\x02\x02\b:\x03\x02\x02\x02" +
+		"\n>\x03\x02\x02\x02\fp\x03\x02\x02\x02\x0E\x12\x05\x06\x04\x02\x0F\x12" +
+		"\x05\n\x06\x02\x10\x12\x05\f\x07\x02\x11\x0E\x03\x02\x02\x02\x11\x0F\x03" +
+		"\x02\x02\x02\x11\x10\x03\x02\x02\x02\x12\x13\x03\x02\x02\x02\x13\x11\x03" +
+		"\x02\x02\x02\x13\x14\x03\x02\x02\x02\x14\x15\x03\x02\x02\x02\x15\x16\x07" +
+		"\x02\x02\x03\x16\x03\x03\x02\x02\x02\x17\x19\x07\f\x02\x02\x18\x1A\x07" +
+		"\n\x02\x02\x19\x18\x03\x02\x02\x02\x1A\x1B\x03\x02\x02\x02\x1B\x19\x03" +
+		"\x02\x02\x02\x1B\x1C\x03\x02\x02\x02\x1C\x1D\x03\x02\x02\x02\x1D\x1F\x07" +
+		"\r\x02\x02\x1E \x07\n\x02\x02\x1F\x1E\x03\x02\x02\x02 !\x03\x02\x02\x02" +
+		"!\x1F\x03\x02\x02\x02!\"\x03\x02\x02\x02\"#\x03\x02\x02\x02#%\x07\r\x02" +
+		"\x02$&\x07\n\x02\x02%$\x03\x02\x02\x02&\'\x03\x02\x02\x02\'%\x03\x02\x02" +
+		"\x02\'(\x03\x02\x02\x02()\x03\x02\x02\x02)+\x07\r\x02\x02*,\x07\n\x02" +
+		"\x02+*\x03\x02\x02\x02,-\x03\x02\x02\x02-+\x03\x02\x02\x02-.\x03\x02\x02" +
+		"\x02./\x03\x02\x02\x02/3\x07\r\x02\x0202\x07\n\x02\x0210\x03\x02\x02\x02" +
+		"25\x03\x02\x02\x0231\x03\x02\x02\x0234\x03\x02\x02\x024\x05\x03\x02\x02" +
+		"\x0253\x03\x02\x02\x0267\x05\x04\x03\x0278\x07\v\x02\x028\x07\x03\x02" +
+		"\x02\x029;\t\x02\x02\x02:9\x03\x02\x02\x02;<\x03\x02\x02\x02<:\x03\x02" +
+		"\x02\x02<=\x03\x02\x02\x02=\t\x03\x02\x02\x02>?\x07\x03\x02\x02?A\x07" +
+		"\x04\x02\x02@B\x07\n\x02\x02A@\x03\x02\x02\x02BC\x03\x02\x02\x02CA\x03" +
+		"\x02\x02\x02CD\x03\x02\x02\x02DE\x03\x02\x02\x02EG\x07\x05\x02\x02FH\x07" +
+		"\n\x02\x02GF\x03\x02\x02\x02HI\x03\x02\x02\x02IG\x03\x02\x02\x02IJ\x03" +
+		"\x02\x02\x02JK\x03\x02\x02\x02KM\x07\r\x02\x02LN\x07\n\x02\x02ML\x03\x02" +
+		"\x02\x02NO\x03\x02\x02\x02OM\x03\x02\x02\x02OP\x03\x02\x02\x02PQ\x03\x02" +
+		"\x02\x02Q^\x07\x07\x02\x02RT\x07\n\x02\x02SR\x03\x02\x02\x02TU\x03\x02" +
+		"\x02\x02US\x03\x02\x02\x02UV\x03\x02\x02\x02VW\x03\x02\x02\x02WY\t\x03" +
+		"\x02\x02XZ\x07\n\x02\x02YX\x03\x02\x02\x02Z[\x03\x02\x02\x02[Y\x03\x02" +
+		"\x02\x02[\\\x03\x02\x02\x02\\]\x03\x02\x02\x02]_\t\x03\x02\x02^S\x03\x02" +
+		"\x02\x02^_\x03\x02\x02\x02_a\x03\x02\x02\x02`b\x07\n\x02\x02a`\x03\x02" +
+		"\x02\x02bc\x03\x02\x02\x02ca\x03\x02\x02\x02cd\x03\x02\x02\x02de\x03\x02" +
+		"\x02\x02ef\x07\b\x02\x02fg\x05\b\x05\x02gk\x07\t\x02\x02hj\x07\n\x02\x02" +
+		"ih\x03\x02\x02\x02jm\x03\x02\x02\x02ki\x03\x02\x02\x02kl\x03\x02\x02\x02" +
+		"ln\x03\x02\x02\x02mk\x03\x02\x02\x02no\x07\v\x02\x02o\v\x03\x02\x02\x02" +
+		"pq\x07\x03\x02\x02qs\x07\x04\x02\x02rt\x07\n\x02\x02sr\x03\x02\x02\x02" +
+		"tu\x03\x02\x02\x02us\x03\x02\x02\x02uv\x03\x02\x02\x02vw\x03\x02\x02\x02" +
+		"wy\x07\x06\x02\x02xz\x07\n\x02\x02yx\x03\x02\x02\x02z{\x03\x02\x02\x02" +
+		"{y\x03\x02\x02\x02{|\x03\x02\x02\x02|}\x03\x02\x02\x02}\x7F\x07\r\x02" +
+		"\x02~\x80\x07\n\x02\x02\x7F~\x03\x02\x02\x02\x80\x81\x03\x02\x02\x02\x81" +
+		"\x7F\x03\x02\x02\x02\x81\x82\x03\x02\x02\x02\x82\x83\x03\x02\x02\x02\x83" +
+		"\x85\t\x03\x02\x02\x84\x86\x07\n\x02\x02\x85\x84\x03\x02\x02\x02\x86\x87" +
+		"\x03\x02\x02\x02\x87\x85\x03\x02\x02\x02\x87\x88\x03\x02\x02\x02\x88\x89" +
+		"\x03\x02\x02\x02\x89\x8A\x07\b\x02\x02\x8A\x8B\x05\x04\x03\x02\x8B\x8F" +
+		"\x07\t\x02\x02\x8C\x8E\x07\n\x02\x02\x8D\x8C\x03\x02\x02\x02\x8E\x91\x03" +
+		"\x02\x02\x02\x8F\x8D\x03\x02\x02\x02\x8F\x90\x03\x02\x02\x02\x90\x92\x03" +
+		"\x02\x02\x02\x91\x8F\x03\x02\x02\x02\x92\x93\x07\v\x02\x02\x93\r\x03\x02" +
+		"\x02\x02\x17\x11\x13\x1B!\'-3<CIOU[^cku{\x81\x87\x8F";
 	public static __ATN: ATN;
 	public static get _ATN(): ATN {
 		if (!UQMGraphicsParser.__ATN) {
@@ -839,6 +908,8 @@ export class AnimationnameContext extends ParserRuleContext {
 export class AnimationdefinitionContext extends ParserRuleContext {
 	public _animation_number: Token;
 	public _animation_type: Token;
+	public _base_restart_rate: Token;
+	public _random_restart_rate: Token;
 	public _name: AnimationnameContext;
 	public HASH(): TerminalNode { return this.getToken(UQMGraphicsParser.HASH, 0); }
 	public AT(): TerminalNode { return this.getToken(UQMGraphicsParser.AT, 0); }
@@ -846,7 +917,15 @@ export class AnimationdefinitionContext extends ParserRuleContext {
 	public BLOCK_BEGIN(): TerminalNode { return this.getToken(UQMGraphicsParser.BLOCK_BEGIN, 0); }
 	public BLOCK_END(): TerminalNode { return this.getToken(UQMGraphicsParser.BLOCK_END, 0); }
 	public NEWLINE(): TerminalNode { return this.getToken(UQMGraphicsParser.NEWLINE, 0); }
-	public INT(): TerminalNode { return this.getToken(UQMGraphicsParser.INT, 0); }
+	public INT(): TerminalNode[];
+	public INT(i: number): TerminalNode;
+	public INT(i?: number): TerminalNode | TerminalNode[] {
+		if (i === undefined) {
+			return this.getTokens(UQMGraphicsParser.INT);
+		} else {
+			return this.getToken(UQMGraphicsParser.INT, i);
+		}
+	}
 	public ANIM_TYPE(): TerminalNode { return this.getToken(UQMGraphicsParser.ANIM_TYPE, 0); }
 	public animationname(): AnimationnameContext {
 		return this.getRuleContext(0, AnimationnameContext);
@@ -858,6 +937,15 @@ export class AnimationdefinitionContext extends ParserRuleContext {
 			return this.getTokens(UQMGraphicsParser.WHITESPACE);
 		} else {
 			return this.getToken(UQMGraphicsParser.WHITESPACE, i);
+		}
+	}
+	public FLOAT(): TerminalNode[];
+	public FLOAT(i: number): TerminalNode;
+	public FLOAT(i?: number): TerminalNode | TerminalNode[] {
+		if (i === undefined) {
+			return this.getTokens(UQMGraphicsParser.FLOAT);
+		} else {
+			return this.getToken(UQMGraphicsParser.FLOAT, i);
 		}
 	}
 	constructor(parent: ParserRuleContext | undefined, invokingState: number) {

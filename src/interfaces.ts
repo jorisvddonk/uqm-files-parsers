@@ -43,6 +43,8 @@ export interface Animation {
   name: string;
   type: AnimationType;
   frames: AnimationFrame[];
+  base_restart_rate?: number;
+  random_restart_rate?: number;
 }
 
 export type AnimationsMap = Map<string, Animation>;

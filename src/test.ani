@@ -13,6 +13,7 @@ test.10.png -1 10 -36 -83
 test.11.png -1 10 -36 -83
 #@ anidef 0 BACKGROUND [Static background]
 #@ anidef 1 RANDOM [Random bits]
+#@ anidef 2 YO_YO 0.25 0.75 [Yoyo]
 #@ aniframe 0 -1.0 [test.0.png -1 10 0 0]
 #@ aniframe 1 0.1 [test.1.png -1 10 -36 -54]
 #@ aniframe 1 0.1 [test.2.png -1 10 -77 -54]
@@ -25,3 +26,6 @@ test.11.png -1 10 -36 -83
 #@ aniframe 1 0.1 [test.9.png -1 10 -36 -83]
 #@ aniframe 1 0.1 [test.10.png -1 10 -36 -83]
 #@ aniframe 1 0.1 [test.11.png -1 10 -36 -83]
+#@ aniframe 2 0.1 [test.9.png -1 10 -36 -83]
+#@ aniframe 2 0.1 [test.10.png -1 10 -36 -83]
+#@ aniframe 2 0.1 [test.11.png -1 10 -36 -83]

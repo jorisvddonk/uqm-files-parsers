@@ -61,10 +61,14 @@ export function parseGraphics(input: string) {
     }
 
     enterAnimationdefinition(context: AnimationdefinitionContext) {
+      const b_r_r = context._base_restart_rate !== undefined ? parseFloat(context._base_restart_rate.text) : undefined;
+      const r_r_r = context._random_restart_rate !== undefined ? parseFloat(context._random_restart_rate.text) : undefined;
       const animation: Animation = {
         name: context._name.text,
         type: stringToAnimationTypeEnum(context._animation_type.text),
-        frames: []
+        frames: [],
+        base_restart_rate: b_r_r,
+        random_restart_rate: r_r_r
       }
       this.numberedAnimationsMap.set(parseInt(context._animation_number.text), animation);
     }
