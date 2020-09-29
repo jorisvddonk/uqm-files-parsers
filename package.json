@@ -1,6 +1,6 @@
 {
   "name": "uqm-files-parsers",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Parsers for various file formats available in UQM",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
