@@ -12,7 +12,8 @@
     "antlr4ts-localization": "antlr4ts -visitor grammars/UQMTextLocalization.g4 -o ./src/textLocalization",
     "antlr4ts-synchronization": "antlr4ts -visitor grammars/UQMTextSynchronization.g4 -o ./src/textSynchronization",
     "antlr4ts-graphics": "antlr4ts -visitor grammars/UQMGraphics.g4 -o ./src/graphics",
-    "antlr4ts": "npm run antlr4ts-localization && npm run antlr4ts-synchronization && npm run antlr4ts-graphics && npm run fix_antlr_grammar_ts"
+    "antlr4ts-commsrc": "antlr4ts -visitor grammars/UQMCommSourceData.g4 -o ./src/commsrc",
+    "antlr4ts": "npm run antlr4ts-localization && npm run antlr4ts-synchronization && npm run antlr4ts-graphics && npm run antlr4ts-commsrc && npm run fix_antlr_grammar_ts"
   },
   "keywords": [],
   "author": "",
