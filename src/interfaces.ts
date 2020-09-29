@@ -55,3 +55,16 @@ export interface Graphics {
   frames: Frame[];
   animations: AnimationsMap;
 }
+
+
+export interface CAnim {
+  start_index: number;
+  num_frames: number;
+  anim_type: AnimationType;
+  wait_talk: boolean;
+  frame_rate_min: number;
+  frame_rate_max: number;
+  restart_rate_min: number;
+  restart_rate_max: number;
+  block_mask: number;
+}
